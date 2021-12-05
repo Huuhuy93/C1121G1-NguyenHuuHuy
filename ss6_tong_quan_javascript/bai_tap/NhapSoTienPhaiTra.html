@@ -6,20 +6,22 @@
 </head>
 <body>
 <label>Nhập Tổng số tiền</label>
-<input id="bill" type="text">
+<input id="bill" type="number">
 <label>Nhập số người</label>
-<input id="amount" type="text">
-<button id="display" type="button" onclick="Nhapvao()">Số tiền mỗi người phải trả</button>
+<input id="amount" type="number">
+<button onclick="nhapvao()">Nhập</button>
+<h1>Số tiền từng người phải trả</h1>
+<h2 id="display"></h2>
 </body>
 <script>
-    function Nhapvao() {
-        let b = document.getElementById("bill").value
+    function nhapvao() {
+        let b = document.getElementById('bill').value;
         b = parseInt(b)
-        let a = document.getElementById("amount").value
+        let a = document.getElementById('amount').value;
         a = parseInt(a)
-        let avg = b / a
-        document.getElementById("display")
-        alert(avg)
+        let avg = b / a;
+        avg = parseInt(avg)
+        document.getElementById('display').innerHTML = avg;
     }
 </script>
 </html>
