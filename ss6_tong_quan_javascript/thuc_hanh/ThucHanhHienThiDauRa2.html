@@ -5,12 +5,35 @@
     <title>Title</title>
 </head>
 <body>
-<div id="messageDiv"></div>
-<button type="button" onclick="showMessage();">Click Me!</button>
-<script>
-    function showMessage(){
-        document.getElementById('messageDiv').innerHTML = 'Xin chào!';
+<label>Nhập điểm Toán</label>
+<input type="text" id="math">
+
+<label>Nhập điểm Lý</label>
+<input type="text" id="physics">
+
+<label>Nhập điểm Hoá</label>
+<input type="text" id="chemistry">
+
+<button onclick="nhapDiemSo">Nhập</button>
+
+<label>Điểm trung bình</label>
+<input type="text" id="average">
+</body>
+<script >
+
+    function nhapDiemSo(params) {
+        let m = document.getElementById(math).value
+        m = parseInt(m)
+        let p = document.getElementById(physics).value
+        p = parseInt(p)
+        let c = document.getElementById(chemistry).value
+        c = parseInt(c)
+        let a = (m + p + c) / 3
+        document.getElementById("average").innerHTML = a
+        alert(a)
     }
+
 </script>
+
 </body>
 </html>

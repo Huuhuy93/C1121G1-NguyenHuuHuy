@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>Nhập Tổng số tiền</label>
+<input id="bill" type="text">
+<label>Nhập số người</label>
+<input id="amount" type="text">
+<button id="display" type="button" onclick="Nhapvao()">Số tiền mỗi người phải trả</button>
+</body>
+<script>
+    function Nhapvao() {
+        let b = document.getElementById("bill").value
+        b = parseInt(b)
+        let a = document.getElementById("amount").value
+        a = parseInt(a)
+        let avg = b / a
+        document.getElementById("display")
+        alert(avg)
+    }
+</script>
+</html>
