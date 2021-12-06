@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<h2><b>Caculator</b></h2>
+<body>
+<input type="text" placeholder="number1" id="num1">
+<input type="text" placeholder="number2" id="num2"><br>
+<button style="margin-top: 10px" type="button" value="Addition" onclick="cong()"><b>Addition(+)</b></button>
+<button style="margin-top: 10px" type="button" value="Subtraction" onclick="tru()"><b>Subtraction(-)</b></button>
+<button style="margin-top: 10px" type="button" value="Multiplication" onclick="nhan()"><b>Multiplication(x)</b></button>
+<button style="margin-top: 10px" type="button" value="Division" onclick="chia()"><b>Division(/)</b></button>
+</body>
+<script>
+    function cong() {
+        let n1 = parseInt(document.getElementById('num1').value);
+        let n2 = parseInt(document.getElementById('num2').value);
+        let result = n1 + n2;
+        alert("tổng là : " +result);
+    }
+    function tru() {
+        let n1 = parseInt(document.getElementById('num1').value);
+        let n2 = parseInt(document.getElementById('num2').value);
+        let result = n1 - n2;
+        alert("hiệu là : " + result);
+    }
+    function nhan() {
+        let n1 = parseInt(document.getElementById('num1').value);
+        let n2 = parseInt(document.getElementById('num2').value);
+        let result = n1 * n2;
+        alert("tích là : " +result);
+    }
+    function chia() {
+        let n1 = parseInt(document.getElementById('num1').value);
+        let n2 = parseInt(document.getElementById('num2').value);
+        let result = n1 / n2;
+        alert("thương là : " +result);
+    }
+</script>
+</html>
