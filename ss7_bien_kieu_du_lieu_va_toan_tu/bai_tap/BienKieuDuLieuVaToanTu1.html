@@ -17,15 +17,11 @@
 </body>
 <script>
     function Nhapdiem() {
-        let n1 = document.getElementById("biology").value
-        n1 = parseInt(n1)
-        let n2 = document.getElementById("physics").value
-        n2 = parseInt(n2)
-        let n3 = document.getElementById("chemistry").value
-        n3 = parseInt(n3)
+        let n1 = parseInt(document.getElementById("biology").value);
+        let n2 = parseInt(document.getElementById("physics").value)
+        let n3 = parseInt(document.getElementById("chemistry").value)
         let avg = (n1+n2+n3) / 3
-        document.getElementById("avarage")
-        alert(avg)
+        alert("Đểm trung bình là :" +avg)
     }
 </script>
 
