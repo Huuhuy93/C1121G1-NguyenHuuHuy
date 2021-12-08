@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>Nhập điểm bài kiểm tra</label>
+<input type="number" id="kt">
+<label>Nhập điểm thi giữa kỳ</label>
+<input type="number" id="gk">
+<label>Nhập điểm thi cuối kỳ</label>
+<input type="number" id="ck">
+<button type="button" onclick="nhapDiem()">Nhập vào</button>
+</body>
+<script>
+    function nhapDiem() {
+        let a = document.getElementById("kt").value;
+        a = parseInt(a);
+        let b = document.getElementById("gk").value;
+        b = parseInt(b);
+        let c = document.getElementById("ck").value;
+        c = parseInt(c);
+        let score = (a + b * 2 + c * 3) / 6;
+        if (score > 8) {
+            if (score > 9) {
+                alert('loại xuất sắc : ' + score);
+            } else {
+                alert('loại giỏi : ' + score);
+            }
+        } else if (score > 6.5) {
+            alert('loại khá : ' + score);
+        } else if (score > 3.5) {
+            alert('loại trung bình : ' + score);
+        } else {
+            alert('loại yếu : ' + score);
+        }
+
+    }
+</script>
+</html>

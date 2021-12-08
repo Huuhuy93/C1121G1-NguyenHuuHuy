@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let m = parseInt(prompt('Nhập số thu nhập của bạn (đơn vị triệu đồng)'));
+    if (m <= 5) {
+        let m1 = m * 0.05;
+        alert('Số thuế TNCN phải là : ' + m1);
+    } else if (m <= 10) {
+        let m2 = m * 0.1 - 0.25;
+        alert('Số thuế TNCN phải là : ' + m2);
+    } else if (m <= 18) {
+        let m3 = m * 0.15 - 0.75;
+        alert('Số thuế TNCN phải là : ' + m3);
+    } else if (m <= 32) {
+        let m4 = m * 0.2 - 1.65;
+        alert('Số thuế TNCN phải là : ' + m4);
+    } else {
+        let m5 = m * 0.25 - 3.25;
+        alert('Số thuế TNCN phải là : ' + m5);
+    }
+
+</script>
+</body>
+</html>

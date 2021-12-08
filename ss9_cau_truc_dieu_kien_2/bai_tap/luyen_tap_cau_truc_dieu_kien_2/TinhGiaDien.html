@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let p = parseInt(prompt('Nhập lượng điện tiêu thụ'));
+    if ( p > 0 && p <= 50 ) {
+        let m1 = p * 1678;
+        alert('Số tiền phải trả là : ' +m1);
+    } else if (p > 51 && p <= 100) {
+        let m2 = p * 1734;
+        alert('Số tiền phải trả là : ' +m2);
+    } else if (p > 100) {
+        let m3 = p * 2014;
+        alert('Số tiền phải trả là : ' +m3);
+    }
+</script>
+</body>
+</html>

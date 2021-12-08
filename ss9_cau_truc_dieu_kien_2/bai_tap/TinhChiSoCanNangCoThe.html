@@ -6,9 +6,9 @@
 </head>
 <body>
 <script>
-    let weight = parseInt(prompt('Nhap can nang'));
+    let weight = parseFloat(prompt('Nhap can nang'));
     let height = parseInt(prompt('Nhap chieu cao'));
-    let bmi = (weight / height ^ 2);
+    let bmi = (weight / (height * height));
     if (bmi < 18.5) {
         document.write('Underweight');
     } else if (bmi < 25) {
