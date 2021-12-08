@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="window"><br>
+<input type="button" id="1" value="1" onclick="nhapLieu(this.value)">
+<input type="button" value="2" onclick="nhapLieu(this.value)">
+<input type="button" value="3" onclick="nhapLieu(this.value)">
+<input type="button" value="+" onclick="nhapLieu(this.value)"><br>
+<input type="button" value="4" onclick="nhapLieu(this.value)">
+<input type="button" value="5" onclick="nhapLieu(this.value)">
+<input type="button" value="6" onclick="nhapLieu(this.value)">
+<input type="button" value="-" onclick="nhapLieu(this.value)"><br>
+<input type="button" value="7" onclick="nhapLieu(this.value)">
+<input type="button" value="8" onclick="nhapLieu(this.value)">
+<input type="button" value="9" onclick="nhapLieu(this.value)">
+<input type="button" value="*" onclick="nhapLieu(this.value)"><br>
+<input type="button" value="c" onclick="xoa(this.value)">
+<input type="button" value="0" onclick="nhapLieu(this.value)">
+<input type="button" value="=" onclick="tinhToan()">
+<input type="button" value="/" onclick="nhapLieu(this.value)"><br>
+<script>
+    function nhapLieu(val) {
+        document.getElementById('window').value += val;
+    }
+    function tinhToan() {
+        let bieuThuc = document.getElementById('window').value;
+        let ketQua = eval(bieuThuc);
+        document.getElementById('window').value = ketQua;
+    }
+    function xoa() {
+        document.getElementById('window').value = "";
+    }
+</script>
+</body>
+</html>
