@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numbers = parseInt(prompt('Nhập số dãy fibonacci'));
+    let n1 = 0;
+    let n2 = 1;
+    let nextNum;
+    for (i = 1; i <= numbers ; i++) {
+        nextNum = n1 + n2;
+        n1 = n2;
+        n2 = nextNum;
+        if (n1 % 5 === 0) {
+            alert('Số đầu tiên của dãy chia hết cho 5 là : ' +n1);
+        }
+    }
+</script>
+</body>
+</html>

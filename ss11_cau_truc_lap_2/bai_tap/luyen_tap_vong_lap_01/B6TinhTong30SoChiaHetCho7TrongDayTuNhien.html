@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numbers = parseInt(prompt('Nhập số lượng chia hết cho 7'));
+    let count = 0;
+    let result = 0;
+    let n = 2 ;
+    while (count < numbers) {
+        if (n % 7 ===0) {
+            result +=n;
+            count++;
+        }
+        n++;
+    }
+    alert('Tổng các số chia hết cho 7 là : ' +result);
+</script>
+</body>
+</html>
