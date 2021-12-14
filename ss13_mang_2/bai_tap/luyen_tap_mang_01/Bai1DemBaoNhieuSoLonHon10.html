@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let dem = 0;
+    for (let i = 0; i < 10; i++) {
+        arr[i] = parseInt(prompt("Nhập vào phần tử thứ " + i));
+    }
+    for (let j = 0; j < 10; j++) {
+        if (arr[j] >= 10) {
+            dem += 1;
+            document.write(arr[j]);
+        }
+    }
+    document.write('<br>')
+    document.write('Có' + dem + 'số lớn hơn hoặc bằng 10');
+</script>
+</body>
+</html>

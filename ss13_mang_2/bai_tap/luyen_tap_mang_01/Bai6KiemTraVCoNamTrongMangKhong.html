@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    for (let i = 0; i < 10; i++) {
+        arr[i] = parseInt(prompt('Nhập vào số nguyên thứ ' + i));
+    }
+    document.write(arr);
+    let V = parseInt(prompt('Nhập V'))
+    let check = false;
+    for (i = 0; i < 10; i++) {
+        if (V === arr[i]) {
+            document.write('<br>');
+            document.write(V+ 'is in the array');
+            check = true;
+        }
+    }
+    if (!check) {
+        document.write('<br>');
+        document.write(V+ 'is not in the array');
+    }
+</script>
+</body>
+</html>

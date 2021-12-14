@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <input type="text" id="input" placeholder="Nhap từ cần tìm kiếm"><br>
+    <input type="button" id="search" value="Tìm Kiếm" onclick="timKiem()"></input>
+    <div id="result"></div>
+</form>
+<script>
+    let Eng = ["orange", "strawberry", "apple", "banana", "pineapple"];
+    let Vn = ["cam", "dâu", "táo", "chuối", "dứa"];
+
+    function timKiem() {
+        let a = document.getElementById('input').value;
+        for (let i = 0; i < Eng.length; i++) {
+            if (a == Eng[i]) {
+                document.getElementById('result').innerHTML = Vn[i];
+                break;
+            } else {
+                document.write('Vui lòng nhập lại');
+            }
+        }
+    }
+</script>
+</body>
+</html>

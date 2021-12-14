@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let size;
+    let check;
+    let check2
+    do {
+        size = parseInt(prompt("Nhập độ dài của mảng"));
+        check = parseInt(size) == size && 0 < size && size <= 10;
+    } while (!check)
+    let array = new Array(parseInt(size));
+    for (let i = 0; i < size; i++) {
+        array[i] = parseInt(prompt("Nhập vào phần tử nguyên thứ " + i));
+    }
+    let max = array[0];
+    let index = 0;
+    for (let i = 0; i < size; i++) {
+        if (array[i] > max) {
+            max = array[i];
+            index = i;
+        }
+    }
+    let sum = 0;
+    for (let j = 0; j < size; j++) {
+        sum += array[j]
+    }
+    let avg = sum / size;
+    document.write('Giá trị lớn nhất trong mảng là : ' +max+ ' tại phần tử thứ : ' +index);
+    document.write('<br>');
+    document.write('Giá trị trung bình các phần tử trong mảng là : ' +avg);
+
+</script>
+</body>
+</html>
