@@ -7,26 +7,18 @@
 <body>
 <script>
     let arr = new Array(10);
-    let check = false;
     for (let i = 0; i < 10; i++) {
         arr[i] = prompt("Nhập vào phần tử thứ: " + i + " của mảng")
     }
     let V = prompt("Nhập vào số nguyên V");
     for (let j = 0; j < 10; j++) {
-        if (arr[j] === V) {
-            check = true;
+        for (let j = i; j < arr.length-1; j++){
+            arr[i] = arr[j+1];
         }
-        if (check){
-            arr[j] = arr[j + 1];
-        }
+        arr[arr.length-1]=0;
     }
-    if (check) {
-        document.write(V + " is in the array" + "<br>");
-        arr.push(0);
-        document.write("dãy mới là: " + arr)
-    } else {
-        document.write(V + " is not in the array")
-    }
+    alert(arr);
+
 </script>
 </body>
 </html>

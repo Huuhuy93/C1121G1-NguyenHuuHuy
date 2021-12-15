@@ -16,13 +16,15 @@
 
     function timKiem() {
         let a = document.getElementById('input').value;
+        let check = false;
         for (let i = 0; i < Eng.length; i++) {
             if (a == Eng[i]) {
+                check = true;
                 document.getElementById('result').innerHTML = Vn[i];
-                break;
-            } else {
-                document.write('Vui lòng nhập lại');
             }
+        }
+        if (!check) {
+            document.write('Không tìm thấy');
         }
     }
 </script>
