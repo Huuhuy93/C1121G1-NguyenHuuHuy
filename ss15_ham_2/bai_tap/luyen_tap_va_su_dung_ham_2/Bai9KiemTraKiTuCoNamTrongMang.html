@@ -5,6 +5,29 @@
     <title>Title</title>
 </head>
 <body>
+<script>
+    let arr = [];
+    let check
 
+    function kiemTra(arr, V) {
+        for (i = 0; i < 5; i++) {
+            if (V === arr[i]) {
+                check = true;
+            }
+        }
+        if (check) {
+            alert(V+ ' nằm trong mảng');
+            return true;
+        } else {
+            alert(V+ ' không nằm trong mảng');
+            return false;
+        }
+    }
+    let V = parseInt(prompt('Nhập V'));
+    for (let i = 0; i < 5; i++) {
+        arr[i] = parseInt(prompt('Nhập vào số nguyên thứ ' + i));
+    }
+    kiemTra(arr,V);
+</script>
 </body>
 </html>
