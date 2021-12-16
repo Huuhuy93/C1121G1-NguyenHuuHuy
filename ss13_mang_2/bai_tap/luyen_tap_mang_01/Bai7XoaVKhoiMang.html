@@ -6,17 +6,17 @@
 </head>
 <body>
 <script>
-    let arr = new Array(10);
-    for (let i = 0; i < 10; i++) {
-        arr[i] = prompt("Nhập vào phần tử thứ: " + i + " của mảng")
-    }
-    let V = prompt("Nhập vào số nguyên V");
-    for (let j = 0; j < 10; j++) {
-        for (let j = i; j < arr.length-1; j++){
-            arr[i] = arr[j+1];
+    let arr = [1, 2, 2, 3, 4];
+    let V = parseInt(prompt("Nhập vào số nguyên V"));
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] == V) {
+            for (let j = i; j < arr.length - 1; j++) {
+                arr[j] = arr[j + 1];
+            }
+            arr[arr.length - 1] = 0;
         }
-        arr[arr.length-1]=0;
     }
+
     alert(arr);
 
 </script>

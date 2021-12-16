@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isPrime(number) {
+        let check = true;
+        if (number > 1) {
+            for (let i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i === 0) {
+                    check = false;
+                    break;
+                }
+            }
+        } else {
+            check = false;
+        }
+
+        if (check) {
+            alert('Đây là 1 số nguyên tố');
+            return true;
+        } else {
+            alert('Đây không phải là 1 số nguyên tố');
+            return false;
+        }
+    }
+    let a = parseInt(prompt('Nhập 1 số'));
+    isPrime(a);
+    //tính tổng các số nguyên tố có trong 1 mảng
+    //let array = [1,2,3,4,5,6];
+    //isPrime(array);
+    //let check =true;
+    //let sum =0;
+    //for (let i=0; i < array.length; i++) {
+     //   if (isPrime(array[i])==true) {
+       //     sum+=array[i];
+       // }
+  //  } alert('tổng các số nguyên tố' +sum);
+</script>
+</body>
+</html>

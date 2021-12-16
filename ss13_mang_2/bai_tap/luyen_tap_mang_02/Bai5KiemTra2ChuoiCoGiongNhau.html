@@ -26,25 +26,23 @@
     for (let j = 0; j < size2; j++) {
         b[j] = parseInt(prompt("Nhập vào phần tử thứ " + j));
     }
-    check = true;
+    check = false;
     if (size1 !== size2) {
         document.write('2 chuỗi không giống nhau')
     } else {
-        for (i=0; i < size1; i++){
-            for (j=0; j < size2; j++) {
-                if (a[i]===b[j]) {
+        for (i = 0; i < size1; i++) {
+            for (j = 0; j < size2; j++) {
+                if (a[i] === b[j]) {
                     check = true;
-                } else {
-                    check = false;
+                    alert('2 chuỗi giống');
                 }
             }
         }
-        if (check===true) {
-            alert('2 chuỗi giống nhau');
-        } else {
-            alert('2 chuỗi không giống nhau');
-        }
     }
+    if (!check) {
+        alert('2 chuỗi không giống nhau');
+    }
+
 
 
 

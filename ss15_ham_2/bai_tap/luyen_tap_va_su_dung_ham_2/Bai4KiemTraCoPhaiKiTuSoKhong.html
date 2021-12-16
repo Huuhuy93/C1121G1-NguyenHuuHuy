@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let check = true;
+
+    function test(a) {
+        if (isNaN(a)) {
+            check = false;
+            alert(+a+' không phải là 1 số')
+        } else {
+            check = true
+            alert(+a+' là 1 số')
+        }
+    }
+    let a = prompt('Nhập');
+    test(a);
+
+</script>
+</body>
+</html>

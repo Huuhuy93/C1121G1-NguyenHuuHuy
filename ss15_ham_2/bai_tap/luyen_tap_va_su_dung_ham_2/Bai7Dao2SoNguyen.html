@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let check = true;
+function doiCho(a,b) {
+    if (a % 1 == 0 && a % 1 == 0) {
+        check = true;
+    } else {
+        check = false;
+    }
+    if (check) {
+        alert('Sau khi đảo 2 số nguyên sẽ thành ' +b+a);
+        return true;
+    } else {
+        alert('Vui lòng nhập lại số nguyên');
+        return false;
+    }
+}
+
+let a = prompt('Nhập số thứ nhất');
+let b = prompt('Nhập số thứ hai');
+doiCho(a,b);
+
+</script>
+</body>
+</html>

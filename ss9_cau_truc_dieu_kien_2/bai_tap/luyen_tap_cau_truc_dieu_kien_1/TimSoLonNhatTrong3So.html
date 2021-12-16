@@ -20,21 +20,12 @@
         n2 = parseInt(n2);
         let n3 = document.getElementById("num3").value;
         n3 = parseInt(n3);
-        if (n1 > n2) {
-            if (n1 > n3) {
-                alert('Số lớn nhất là : ' + n1);
-            } else {
-                alert('Số lớn nhát là : ' + n3);
-            }
-        } else if (n1 > n3) {
-            alert('Số lớn nhát là : ' + n2);
-        } else if (n1 < n3) {
-            if (n2 < n3) {
-                alert('Số lớn nhất là : ' + n3)
-            } else {
-                alert('Số lớn nhất là : ' + n2)
-            }
-
+        if (n1 > n2 && n1 > n3) {
+            alert('Số lớn nhát là ' +n1);
+        } else  if (n2 > n3){
+            alert('Số lớn nhát là ' +n2);
+        } else {
+            alert('Số lớn nhát là ' +n3);
         }
     }
 </script>

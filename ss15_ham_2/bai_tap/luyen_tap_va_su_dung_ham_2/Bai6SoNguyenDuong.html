@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let check = false;
+    function isInterger(number) {
+        if (number > 0 && number % 1 ==0) {
+            check = true;
+        } else {
+            check = false;
+        }
+        if (check) {
+            alert('Đây là số nguyên dương' +number);
+            return true;
+        } else {
+            alert('Đây không phải là số nguyên dương' +number);
+            return false;
+        }
+    }
+    let numer = (prompt('Nhập 1 số bất kỳ'));
+    isInterger(numer);
+</script>
+</body>
+</html>
