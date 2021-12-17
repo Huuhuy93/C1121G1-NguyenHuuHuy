@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(doC) {
+            this.doC = doC;
+        }
+        getDoC() {
+            return this.doC;
+        }
+        getDoF() {
+            return 1.8 * doC + 32;
+        }
+        getDoK() {
+            return doC + 273.15;
+        }
+    }
+    let temperature = new Temperature(25);
+    let doC = temperature.getDoC();
+    let doF = temperature.getDoF();
+    let doK = temperature.getDoK();
+    alert(+doC+' chuyen sang do F la : '+doF+' chuyen sang do K la : '+doK);
+</script>
+</body>
+</html>

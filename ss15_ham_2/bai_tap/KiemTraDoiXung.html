@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" onclick="main()" value="Test">
+<script>
+    let c = "redder";
+    function isPalindrome(str) {
+        let arr = str.split("");
+        let first = arr[0];
+        let last = arr[arr.length - 1];
+        if (first === last) {
+            arr.shift();
+            arr.pop();
+            if (isEnd(arr)) {
+                return true;
+            } else {
+                let newStr = arr.join("");
+                return isPalindrome(newStr);
+            }
+        }
+        return false;
+    }
+    function isEnd(arr) {
+        return arr.length === 0 || arr.length === 1;
+    }
+    function main() {
+        console.log(isPalindrome(c));
+    }
+</script>
+</body>
+</html>

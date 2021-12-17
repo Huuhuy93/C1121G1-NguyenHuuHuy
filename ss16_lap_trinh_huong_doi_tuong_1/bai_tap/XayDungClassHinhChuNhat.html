@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Rectangle {
+        constructor(heigh, width) {
+            this.heigh = heigh;
+            this.width = width;
+        }
+        getHeigh() {
+            return this.heigh;
+        }
+        getWidth() {
+            return this.width;
+        }
+        getArea() {
+            return heigh * width;
+        }
+        getPerimeter() {
+            return (heigh + width) * 2;
+        }
+    }
+    let rectangle = new Rectangle(10, 20);
+    let heigh = rectangle.getHeigh();
+    let width = rectangle.getWidth();
+    let area = rectangle.getArea();
+    let perimeter = rectangle.getPerimeter();
+    alert('Dien tich hinh chu nhat la : ' +area+' Chu vi hinh chu nhat la : ' +perimeter);
+</script>
+</body>
+</html>
