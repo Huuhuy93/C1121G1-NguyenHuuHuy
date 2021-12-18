@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    check = false
+    function kiemTra(chuoi) {
+        let star = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair,Dubhe", "Regulus"];
+        let constell = ["Ursa", "Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa", "Major", "Leo"];
+        for (let i = 0; i < star.length; i++) {
+            if (chuoi == star[i]) {
+                return constell[i];
+            }
+        }
+        return check;
+    }
+
+
+    let c = prompt("Nhập tên ngôi sao ");
+    let chuoi = kiemTra(c);
+    if (chuoi == check) {
+        document.write("không tìm thấy sao nào ");
+    } else {
+        document.write("Chòm sao tương ứng " + c + " là: " + chuoi);
+    }
+</script>
+</body>
+</html>
