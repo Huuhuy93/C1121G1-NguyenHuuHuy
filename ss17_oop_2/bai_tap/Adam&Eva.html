@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Apple {
+        constructor(weightA) {
+            this.weightA = weightA;
+        }
+
+        getWeightA() {
+            return this.weightA;
+        }
+
+        decrease() {
+            apple.weightA--;
+        }
+
+        isEmpty() {
+            if (apple.weightA == 0) {
+                alert('Táo đã hết');
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        isMale() {
+            if (this.gender === 'male') {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        setGender(gender) {
+            this.gender = gender;
+        }
+
+        checkWeightA(apple) {
+            return apple.weightA;
+        }
+
+        eatApple(apple) {
+            if (apple.weightA > 0) {
+                eva.weight++
+                apple.weightA--
+            }
+        }
+
+        say(text) {
+            document.write('Eva nói : ' + text);
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        setWeight(weight) {
+            this.weight = weight;
+        }
+    }
+
+    let tao = new Apple(10);
+    document.write('trọng lượng táo ban đầu: ' + tao.getWeightA() + '<br>');
+    let eva = new Human('Eva', 'female', 45);
+    document.write('Tên : ' + eva.getName() +'<br>');
+    document.write('Cân nặng ban đầu : ' +eva.getWeight()+'<br>');
+    if (eva.isMale()) {
+        document.write('male')
+    } else {
+        document.write('female')
+    }
+    eva.eatApple(tao);
+    eva.checkWeightA(tao);
+    document.write('Trọng lượng táo còn lại : ' +eva.checkWeightA(tao));
+    document.write('Cân nặng của Eva sau khi ăn táo : '+eva.getWeight());
+
+</script>
+</body>
+</html>
