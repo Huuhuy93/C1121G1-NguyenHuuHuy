@@ -12,33 +12,23 @@
             this.heigh = heigh;
             this.width = width;
         }
-        getHeigh() {
-            return this.heigh;
-        }
-        getWidth() {
-            return this.width;
-        }
         getArea() {
-            return heigh * width;
+            return this.heigh * this.width;
         }
         getPerimeter() {
-            return (heigh + width) * 2;
+            return (this.heigh + this.width) * 2;
+        }
+        display(){
+            let canvas = document.getElementById("DemoCanvas");
+            let ctx = canvas.getContext("2d");
+            ctx.fillRect(0,0,this.width,this.heigh);
         }
     }
-    let rectangle = new Rectangle(100, 200);
-    let heigh = rectangle.getHeigh();
-    let width = rectangle.getWidth();
-    let area = rectangle.getArea();
-    let perimeter = rectangle.getPerimeter();
-    alert('Dien tich hinh chu nhat la : ' +area+' Chu vi hinh chu nhat la : ' +perimeter);
+    let hcn = new Rectangle(100, 200);
+    alert('Dien tich hinh chu nhat la : ' +hcn.getArea());
+    alert('Chu vi hinh chu nhat la : ' +hcn.getPerimeter());
+    hcn.display()
 
-    let canvas = document.getElementById("DemoCanvas");
-    if (canvas.getContext)
-    {
-        let ctx = canvas.getContext('2d');
-        ctx.fillStyle='#fa4b2a';    // color of fill
-        ctx.fillRect(10, 40, 100, 200); // create rectangle
-    }
 </script>
 </body>
 </html>

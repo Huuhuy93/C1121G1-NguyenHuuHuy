@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let salary = parseInt(prompt('Nhập vào lương trước thuế'));
+    let tax =0;
+    if (salary<15){
+        if (salary<7){
+            tax = (salary*5)/100;
+            salary -=tax;
+        } else {
+            tax = (salary*10)/100;
+            salary -=tax;
+        }
+    } else {
+        tax = (salary*20)/100;
+        salary -=tax;
+    }
+    alert('lương thực nhận sau thuế là : '+salary)
+</script>
+</body>
+</html>
