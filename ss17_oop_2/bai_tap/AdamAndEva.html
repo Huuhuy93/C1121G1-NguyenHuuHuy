@@ -8,7 +8,7 @@
 <script>
     class Apple {
         constructor(weightA) {
-            this.weightA = weightA;
+            this.weightA = 10;
         }
 
         getWeightA() {
@@ -16,11 +16,11 @@
         }
 
         decrease() {
-            apple.weightA--;
+            this.weightA--;
         }
 
         isEmpty() {
-            if (apple.weightA == 0) {
+            if (this.weightA == 0) {
                 alert('Táo đã hết');
                 return true;
             } else {
@@ -44,23 +44,25 @@
             }
         }
 
-        setGender(gender) {
-            this.gender = gender;
-        }
-
-        checkWeightA(apple) {
-            return apple.weightA;
+        checkApple(apple) {
+            if (apple.isEmpty()) {
+                return false;
+            } else {
+                return true;
+            }
         }
 
         eatApple(apple) {
-            if (apple.weightA > 0) {
-                eva.weight++
-                apple.weightA--
+            if (this.checkApple(apple)) {
+                apple.decrease();
+                this.weight++;
+            } else {
+                alert('táo đã hết');
             }
         }
 
         say(text) {
-            document.write('Eva nói : ' + text);
+            document.write(this.name + ' nói : ' + text);
         }
 
         getName() {
@@ -78,22 +80,29 @@
         setWeight(weight) {
             this.weight = weight;
         }
+
+        setGender(gender) {
+            this.gender = gender;
+        }
+
+        getGender() {
+            return this.gender
+        }
     }
 
-    let tao = new Apple(10);
-    document.write('trọng lượng táo ban đầu: ' + tao.getWeightA() + '<br>');
+    let tao = new Apple();
     let eva = new Human('Eva', 'female', 45);
-    document.write('Tên : ' + eva.getName() +'<br>');
-    document.write('Cân nặng ban đầu : ' +eva.getWeight()+'<br>');
-    if (eva.isMale()) {
-        document.write('male')
-    } else {
-        document.write('female')
-    }
+    let adam = new Human('Adam', 'male', 60);
+    adam.say(' mời em ăn' + '<br>');
+    eva.say(' ok để em ăn');
     eva.eatApple(tao);
-    eva.checkWeightA(tao);
-    document.write('Trọng lượng táo còn lại : ' +eva.checkWeightA(tao));
-    document.write('Cân nặng của Eva sau khi ăn táo : '+eva.getWeight());
+    eva.say('em ăn rồi,đến lượt anh ăn' +'<br>');
+    adam.eatApple(tao);
+    document.write('trọng lượng adam : ' + adam.getWeight());
+    document.write('trọng lượng của eva :' + eva.getWeight());
+    document.write('trọng lượng quả táo : ' + tao.getWeightA());
+    adam.say('tôi giới tính là : ' +adam.getGender());
+
 
 </script>
 </body>
