@@ -6,19 +6,19 @@
 </head>
 <body>
 <script>
-   let arr = [];
-    for (let i = 0; i < 10; i++) {
-        arr[i] = parseInt(prompt("Nhập vào phần tử thứ " +i));
+    let arr = [];
+    for (let i = 0; i < 5; i++) {
+        arr[i] = parseInt(prompt("Nhập vào phần tử thứ " + i));
     }
     let max = arr[0];
-    let index = 0;
+    let index;
     for (let i = 0; i < 10; i++) {
         if (arr[i] > max) {
             max = arr[i];
             index = i;
         }
     }
-    alert('phần tử lớn nhất là :' +max+ 'tại phần tử thứ :' +index);
+    alert('phần tử lớn nhất là :' + max + 'tại phần tử thứ :' + index);
 </script>
 </body>
 </html>
