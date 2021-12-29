@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Quản Lý Công Nhân</h2>
+<p id="display"></p>
+<script>
+    class CongNhan {
+        constructor(hoVaTen, ngaySinh, diaChi, luong, chucVu) {
+            this.hoVaTen = hoVaTen;
+            this.ngaySinh = ngaySinh;
+            this.diaChi = diaChi;
+            this.luong = luong;
+            this.chucVu = chucVu;
+        }
+
+        setHoVaTen(hoVaTen) {
+            this.hoVaTen = hoVaTen;
+        }
+
+        getHoVaTen() {
+            return this.hoVaTen;
+        }
+
+        setNgaySinh(ngaySinh) {
+            this.ngaySinh = ngaySinh;
+        }
+
+        getNgaySinh() {
+            return this.ngaySinh;
+        }
+
+        setDiaChi(diaChi) {
+            this.diaChi = diaChi;
+        }
+
+        getDiaChi() {
+            return this.diaChi;
+        }
+
+        setLuong(luong) {
+            this.luong = luong;
+        }
+
+        getLuong() {
+            return this.luong;
+        }
+
+        setChucVu(chucVu) {
+            this.chucVu = chucVu;
+        }
+
+        getChucVu() {
+            return this.chucVu;
+        }
+    }
+
+    let nhanCong1 = new CongNhan("Nguyen Van A", "10-10-1990", "Quảng Nam", 1000, "Abc");
+    let nhanCong2 = new CongNhan("Nguyen Van B", "13-09-1885", "Đà Nẵng", 1000, "Abc");
+    let nhanCong3 = new CongNhan("Nguyen Van C", "12-10-1995", "Quảng Trị", 1000, "Abc");
+    let danhSachCongNhan = [nhanCong1, nhanCong2, nhanCong3];
+    display(danhSachCongNhan);
+
+    function display(danhsach) {
+        let bang = '<table border="1"  style="border-collapse: collapse">\n' +
+            '    <tr>\n' +
+            '        <th>STT</th>\n' +
+            '        <th>Họ và tên</th>\n' +
+            '        <th>Ngày sinh</th>\n' +
+            '        <th>Địa chỉ</th>\n' +
+            '        <th>Lương</th>\n' +
+            '        <th>Chức vụ</th>\n' +
+            '    </tr>';
+        for (let i = 0; i < danhsach.length; i++) {
+            bang += ' <tr>\n' +
+                '        <td>' + (i + 1) + '</td>\n' +
+                '        <td>' + danhsach[i].getHoVaTen() + '</td>\n' +
+                '        <td>' + danhsach[i].getNgaySinh() + '</td>\n' +
+                '        <td>' + danhsach[i].getDiaChi() + '</td>\n' +
+                '        <td>' + danhsach[i].getLuong() + '</td>\n' +
+                '        <td>' + danhsach[i].getChucVu() + '</td>\n' +
+                '    </tr>';
+        }
+        bang += '</table>';
+        document.getElementById("display").innerHTML = bang;
+    }
+</script>
+</body>
+</html>

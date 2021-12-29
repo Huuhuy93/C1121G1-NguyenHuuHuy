@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>MENU ĐỒ UỐNG</h2>;
+<table border="1">
+    <tr>
+        <th>STT</th>
+        <th>ĐỒ UỐNG</th>
+        <th>ĐƠN GIÁ</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Cafe</td>
+        <td>15000</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Cam vắt</td>
+        <td>30000</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Nước ép cà rốt</td>
+        <td>25000</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>Nước ép cà chua</td>
+        <td>25000</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>Nước lọc</td>
+        <td>20000</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>Nước dừa</td>
+        <td>40000</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>Tính tiền</td>
+        <td><input type="button" id="Nhap" value="Nhap" onclick="buyDrink()"></td>
+    </tr>
+</table>
+
+<script>
+    let sum = 0;
+
+    function buyDrink() {
+        alert('1. Cafe'+'\n'+'2. Cam vắt'+'\n'+'3. Nước ép cà rốt'+'\n'
+            +'4. Nước ép cà chua'+'\n'+'5. Nước lọc'+'\n'+'6. Nước dừa'+'\n'+'7. Tính tiền')
+        let flag = true;
+        do {
+            let ord = document.getElementById("Nhap").value;
+            ord = parseInt(prompt('Nhập vào số thứ tự đồ uống bạn muốn chọn'));
+            switch (ord) {
+                case 1:
+                    alert('Cafe đơn giá : 15.000d');
+                    let sl1 = parseInt(prompt('nhập số lượng'));
+                    sun += sl1 * 15000;
+                    break;
+                case 2:
+                    alert('Cam vắt đơn giá : 30.000d');
+                    let sl2 = parseInt(prompt('nhập số lượng'));
+                    sum += sl2 * 30000;
+                    break;
+                case 3:
+                    alert('Nước ép cà rốt : 25.000d');
+                    let sl3 = parseInt(prompt('nhập số lượng'));
+                    sum += sl3 * 25000;
+                    break;
+                case 4:
+                    alert('Nước ép cà chua : 25.000d');
+                    let sl4 = parseInt(prompt('nhập số lượng'));
+                    sum += sl4 * 25000;
+                    break;
+                case 5:
+                    alert('Nước lọc : 20.000d');
+                    let sl5 = parseInt(prompt('nhập số lượng'));
+                    sum += sl5 * 20000;
+                    break;
+                case 6:
+                    alert('Nước dùa : 40.000d');
+                    let sl6 = parseInt(prompt('nhập số lượng'));
+                    sum += sl6 * 40000;
+                    break;
+                case 7:
+                    flag = false;
+                    break;
+            }
+        }
+        while (flag);
+        alert('Tổng số tiền bạn phải thanh toán là : ' + sum);
+    }
+</script>
+</body>
+</html>

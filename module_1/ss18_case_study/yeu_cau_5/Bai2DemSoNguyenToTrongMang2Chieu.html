@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isPrime(number) {
+        let check = true;
+        if (number > 1) {
+            for (let i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i === 0) {
+                    check = false;
+                    break;
+                }
+            }
+        } else {
+            check = false;
+        }
+        if (check) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    let arr = [
+        [1, 2, 3, 5, 7, 9],
+        [2, 4, 5, 13],
+        [3, 4, 6, 7, 9]
+    ]
+    isPrime(arr);
+    let check = true;
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr[i].length; j++) {
+            if (isPrime(arr[i][j]) == true){
+                sum +=1;
+            }
+        }
+    }
+    alert('Có '+sum+' phần tử là số nguyên tố trong mảng 2 chiều này')
+</script>
+</body>
+</html>

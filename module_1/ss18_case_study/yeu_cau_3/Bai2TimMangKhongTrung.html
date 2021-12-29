@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = [1, 5, 3, 3];
+    let b = [1, 3, 5, 7, 9, 6];
+    let c = [];
+    for (let i = 0; i < b.length; i++) {
+        for (let j = 0; j < a.length; j++) {
+            if (b[i] == a[j]) {
+                break;
+            } else if (j == a.length - 1) {
+                c.push(b[i]);
+            }
+        }
+    }
+    alert('Các phần tử có trong b mà không có trong a là : ' + c);
+
+</script>
+</body>
+</html>

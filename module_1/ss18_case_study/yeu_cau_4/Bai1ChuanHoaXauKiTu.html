@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function titleCase(str) {
+        let arr = str.toLowerCase().trim().split(" ");
+        let result = "";
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] != "") {
+                arr[i] = arr[i].substr(0, 1).toUpperCase() + arr[i].substr(1);
+                result += arr[i] + " "
+            }
+        }
+        return result
+    }
+    let string = prompt('Nhập 1 chuỗi bất kì');
+    result = titleCase(string);
+    alert('Chuỗi sau khi chuẩn hóa là : '+result)
+
+    function longestWord() {
+        let str = prompt('Nhập 1 chuỗi bất kỳ để tìm từ dài nhất');
+        let arr = str.split(" ");
+        let max = 0;
+        for (let i=0;i<arr.length;i++){
+            if (max < arr[i].length){
+                max = arr[i].length;
+                alert('Từ dài nhất trong chuỗi là : '+arr[i]);
+                alert('Sô lượng kí từ của từ dài nhất là : '+max)
+            }
+        }
+        return max
+    }
+    longestWord()
+</script>
+</body>
+</html>

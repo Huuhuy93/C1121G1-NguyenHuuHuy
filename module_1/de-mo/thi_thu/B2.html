@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function vietTat(str) {
+        let arr = str.trim().toLowerCase().split(" ");
+        let result = "";
+        for (let i = 0; i < arr.length; i++) {
+            if (arr.length <= 1) {
+                alert('Chuỗi chỉ có 1 từ nên không cần viết tắt')
+            } else if (arr[i] != "") {
+                arr[i] = arr[i].substr(0, 1).toUpperCase();
+                result += arr[i];
+            }
+        }
+        return result;
+    }
+    let str = prompt('Nhập vào 1 chuỗi bất kỳ');
+    let result = vietTat(str);
+    alert('cụm từ được viết tắt và in hoa chữ cái đầu là : ' + result)
+
+</script>
+</body>
+</html>
