@@ -33,10 +33,10 @@ public class AddElementToArray {
             }
         } while (index <= -1 || index > size - 1);
 
-        int[] array2;
-        
+        for (int i = array.length - 1; i > index; i--) {
+                array[i] = array[i-1];
+        }
+        array[index] = x;
         System.out.println("Array after add " + x + " : " + Arrays.toString(array));
-
-
+        }
     }
-}
