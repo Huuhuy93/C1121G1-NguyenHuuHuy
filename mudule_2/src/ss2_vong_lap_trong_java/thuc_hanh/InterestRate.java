@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class InterestRate {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        double money = 1.0;
+        double money = 0;
         double interestRate = 1.0;
         int month = 1;
         System.out.println("Enter investment amount: ");
@@ -16,8 +16,10 @@ public class InterestRate {
         interestRate = sc.nextDouble();
         double totalInterest = 0;
         for (int i = 0; i < month; i++) {
-            totalInterest += money * (interestRate/100)/12 * month;
+            totalInterest += money * interestRate / 100 / 12;
+            money += money * interestRate / 100 / 12;
         }
         System.out.println("Total of interest: " + totalInterest);
+        System.out.println("Total of your money : " + money);
     }
 }
