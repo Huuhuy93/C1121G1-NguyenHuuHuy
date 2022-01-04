@@ -1,4 +1,4 @@
-package ss1_introduce_to_java.thuc_hanh;
+package ss1_introduce_to_java.practice;
 
 public class Variables {
     public static void main(String[] args) {
