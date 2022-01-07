@@ -20,7 +20,7 @@ public class Cylinder extends Circle {
         this.heigh = heigh;
     }
     public double getVolume() {
-        return getArea() * heigh;
+        return super.getArea() * heigh;
     }
 
     @Override
