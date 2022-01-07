@@ -3,7 +3,8 @@ package ss4_class_and_oop_in_java.practice.retangcle;
 import java.util.Scanner;
 
 public class Rectangcle {
-    double width, height;
+    double width;
+    double height;
 
     public Rectangcle(double width, double height) {
         this.width = width;
