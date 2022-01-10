@@ -1,6 +1,7 @@
-package ss7_abstract_class_and_interface.exercise;
+package ss7_abstract_class_and_interface.exercise.interface_resizeable_for_shape;
 
-import ss6_inherritance.practice.system_object_shape.Rectangle;
+import ss7_abstract_class_and_interface.exercise.interface_resizeable_for_shape.IResizeable;
+import ss7_abstract_class_and_interface.exercise.interface_resizeable_for_shape.Shape;
 
 public class Square extends Shape implements IResizeable {
     private double side;

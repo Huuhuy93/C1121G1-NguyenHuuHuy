@@ -1,7 +1,6 @@
-package ss7_abstract_class_and_interface.exercise;
+package ss7_abstract_class_and_interface.exercise.interface_colorable_for_shape;
 
-
-public class Circle extends Shape implements IResizeable  {
+public class Circle extends Shape implements IColorable {
     private double radius = 1.0;
 
     public Circle() {
@@ -41,8 +40,7 @@ public class Circle extends Shape implements IResizeable  {
     }
 
     @Override
-    public void resize(double percent) {
-        setRadius(getRadius() * percent);
-
+    public void howToColor() {
+        System.out.println("Color all the whole cirlce");
     }
 }

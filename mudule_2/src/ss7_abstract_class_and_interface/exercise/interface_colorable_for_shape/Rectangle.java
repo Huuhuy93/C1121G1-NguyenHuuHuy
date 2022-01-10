@@ -1,7 +1,6 @@
-package ss7_abstract_class_and_interface.exercise;
+package ss7_abstract_class_and_interface.exercise.interface_colorable_for_shape;
 
-
-public class Rectangle extends Shape implements IResizeable {
+public class Rectangle extends Shape {
     private double width = 1.0;
     private double heigh = 1.0;
 
@@ -51,11 +50,5 @@ public class Rectangle extends Shape implements IResizeable {
                 '}' +
                 ", which is a subclass of " +
                 super.toString();
-    }
-
-    @Override
-    public void resize(double percent) {
-        setWidth(getWidth() * percent);
-        setHeigh(getHeigh() * percent);
     }
 }

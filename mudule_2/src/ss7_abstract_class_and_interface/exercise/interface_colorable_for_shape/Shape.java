@@ -1,6 +1,6 @@
-package ss7_abstract_class_and_interface.exercise;
+package ss7_abstract_class_and_interface.exercise.interface_colorable_for_shape;
 
-public class Shape {
+public abstract class Shape {
     private String color = "green";
     private boolean filled = true;
 
@@ -36,10 +36,12 @@ public class Shape {
                 + (isFilled() ? "filled" : "not filled");
     }
 
-
     public static void printShape(Shape[] shape) {
         for (Shape x : shape) {
             System.out.println(x.toString());
         }
+    }
+    public static boolean isColorable(Shape shape){
+        return IColorable.class.isInstance(shape);
     }
 }

@@ -1,10 +1,12 @@
-package ss6_inherritance.practice.system_object_shape;
+package ss7_abstract_class_and_interface.exercise.interface_resizeable_for_shape;
 
 public class Shape {
     private String color = "green";
     private boolean filled = true;
+
     public Shape() {
     }
+
     public Shape(String color, boolean filled) {
         this.color = color;
         this.filled = filled;
@@ -29,8 +31,9 @@ public class Shape {
     @Override
     public String toString() {
         return "A Shape with color of "
-                +getColor()
+                + getColor()
                 + " and "
                 + (isFilled() ? "filled" : "not filled");
     }
 }
+

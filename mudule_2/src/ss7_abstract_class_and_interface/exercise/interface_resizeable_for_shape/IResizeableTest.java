@@ -1,4 +1,4 @@
-package ss7_abstract_class_and_interface.exercise;
+package ss7_abstract_class_and_interface.exercise.interface_resizeable_for_shape;
 
 import java.util.Random;
 
