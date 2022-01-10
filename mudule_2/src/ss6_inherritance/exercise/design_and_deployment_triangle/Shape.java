@@ -1,6 +1,4 @@
-package ss6_inherritance.practice.system_object_shape;
-
-import ss7_abstract_class_and_interface.exercise.IResizeable;
+package ss6_inherritance.exercise.design_and_deployment_triangle;
 
 public class Shape {
     private String color = "green";
