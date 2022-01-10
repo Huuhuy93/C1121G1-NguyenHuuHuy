@@ -35,6 +35,6 @@ public class Square extends Shape implements IResizeable {
 
     @Override
     public void resize(double percent) {
-        this.side *= percent;
+        setSide(getSide() * percent);
     }
 }

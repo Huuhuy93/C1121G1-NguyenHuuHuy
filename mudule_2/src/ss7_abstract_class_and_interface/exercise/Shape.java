@@ -1,6 +1,6 @@
 package ss7_abstract_class_and_interface.exercise;
 
-public class Shape implements IResizeable {
+public class Shape {
     private String color = "green";
     private boolean filled = true;
 
@@ -36,9 +36,6 @@ public class Shape implements IResizeable {
                 + (isFilled() ? "filled" : "not filled");
     }
 
-    @Override
-    public void resize(double percent) {
-    }
 
     public static void printShape(Shape[] shape) {
         for (Shape x : shape) {

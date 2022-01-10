@@ -1,6 +1,5 @@
 package ss7_abstract_class_and_interface.exercise;
 
-import ss6_inherritance.practice.system_object_shape.Shape;
 
 public class Rectangle extends Shape implements IResizeable {
     private double width = 1.0;
@@ -56,7 +55,7 @@ public class Rectangle extends Shape implements IResizeable {
 
     @Override
     public void resize(double percent) {
-        this.heigh *= percent;
-        this.width *= percent;
+        setWidth(getWidth() * percent);
+        setHeigh(getHeigh() * percent);
     }
 }

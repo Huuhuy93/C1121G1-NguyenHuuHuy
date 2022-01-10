@@ -1,8 +1,7 @@
 package ss7_abstract_class_and_interface.exercise;
 
-import ss6_inherritance.practice.system_object_shape.Shape;
 
-public class Circle extends Shape implements IResizeable {
+public class Circle extends Shape implements IResizeable  {
     private double radius = 1.0;
 
     public Circle() {
@@ -43,6 +42,7 @@ public class Circle extends Shape implements IResizeable {
 
     @Override
     public void resize(double percent) {
-        this.radius = percent;
+        setRadius(getRadius() * percent);
+
     }
 }
