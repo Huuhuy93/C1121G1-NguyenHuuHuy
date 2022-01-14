@@ -30,14 +30,8 @@ public class MobilephoneServiceImpl implements IServiceProduct {
         System.out.println("nhập hãng sản xuất");
         String brand = sc.nextLine();
         MobilePhone mobilePhone = new MobilePhone(id, nameProduct, price, name, brand);
-
-        for (int i = 0; i < mobilePhonesArrayList.size(); i++) {
-            if (mobilePhonesArrayList.get(i) == null) {
-                mobilePhonesArrayList.add(mobilePhone);
-                System.err.println("Thêm mới thành công");
-                break;
-            }
-        }
+        mobilePhonesArrayList.add(mobilePhone);
+        System.err.println("Thêm mới thành công");
     }
 
     @Override
@@ -59,6 +53,7 @@ public class MobilephoneServiceImpl implements IServiceProduct {
         for (int i = 0; i < mobilePhonesArrayList.size(); i++ ) {
             if (mobilePhonesArrayList.get(i).getId() == idDlelete) {
                 mobilePhonesArrayList.remove(i);
+                System.out.println("Đã xóa thành công");
             }
          else{
                     System.out.println("không có phần tử cần xóa");
@@ -77,8 +72,9 @@ public class MobilephoneServiceImpl implements IServiceProduct {
         System.out.println("Nhập tên sản phẩm cần tìm kiếm");
         String nameSearch = sc.nextLine();
         for (MobilePhone mobilePhone: mobilePhonesArrayList) {
-            if (mobilePhone.getNamePhone().equalsIgnoreCase(nameSearch));
-            mobilePhone.toString();
+            if (mobilePhone.getNamePhone().equalsIgnoreCase(nameSearch)) {
+                System.out.println(mobilePhone);
+            }
         }
     }
 }
