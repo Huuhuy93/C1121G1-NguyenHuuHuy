@@ -30,9 +30,11 @@ public class MobilephoneServiceImpl implements IServiceProduct {
         System.out.println("nhập hãng sản xuất");
         String brand = sc.nextLine();
         MobilePhone mobilePhone = new MobilePhone(id, nameProduct, price, name, brand);
+
         for (int i = 0; i < mobilePhonesArrayList.size(); i++) {
             if (mobilePhonesArrayList.get(i) == null) {
-                mobilePhonesArrayList.set(i, mobilePhone);
+                mobilePhonesArrayList.add(mobilePhone);
+                System.err.println("Thêm mới thành công");
                 break;
             }
         }
@@ -40,9 +42,11 @@ public class MobilephoneServiceImpl implements IServiceProduct {
 
     @Override
     public void display() {
-        for (int i = 0; i < mobilePhonesArrayList.size(); i++ ) {
-            if (mobilePhonesArrayList.get(i) != null) {
-                System.out.println(mobilePhonesArrayList.get(i).toString());
+        for (MobilePhone temp: mobilePhonesArrayList) {
+            if (temp == null) {
+                break;
+            } else {
+                System.out.println(temp.toString());
             }
         }
     }
@@ -56,7 +60,10 @@ public class MobilephoneServiceImpl implements IServiceProduct {
             if (mobilePhonesArrayList.get(i).getId() == idDlelete) {
                 mobilePhonesArrayList.remove(i);
             }
-        }
+         else{
+                    System.out.println("không có phần tử cần xóa");
+                }
+            }
     }
 
     @Override
@@ -66,6 +73,12 @@ public class MobilephoneServiceImpl implements IServiceProduct {
 
     @Override
     public void search() {
-
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Nhập tên sản phẩm cần tìm kiếm");
+        String nameSearch = sc.nextLine();
+        for (MobilePhone mobilePhone: mobilePhonesArrayList) {
+            if (mobilePhone.getNamePhone().equalsIgnoreCase(nameSearch));
+            mobilePhone.toString();
+        }
     }
 }

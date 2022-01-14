@@ -1,5 +1,6 @@
 package ss11_java_collection_framework.exercise.product_use_arraylist.controller;
 
+import ss11_java_collection_framework.exercise.product_use_arraylist.model.service.IServiceProduct;
 import ss11_java_collection_framework.exercise.product_use_arraylist.model.service.MobilephoneServiceImpl;
 
 import java.util.Scanner;
@@ -11,6 +12,7 @@ public class MainMenuProduct {
         int chooseMenu;
         boolean flag = true;
         do {
+            System.out.println("Nhập chức năng bạn muốn dùng");
             System.out.println("1.\tadd\n" +
                     "2.\tdisplay\n" +
                     "3.\tedit \n" +

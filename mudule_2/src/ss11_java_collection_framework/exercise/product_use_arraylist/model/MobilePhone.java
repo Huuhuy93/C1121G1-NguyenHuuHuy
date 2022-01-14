@@ -36,10 +36,10 @@ public class MobilePhone extends Product{
     @Override
     public String toString() {
         return "MobilePhone{" +
-                "namePhone='" + namePhone + '\'' +
-                ", brand='" + brand + '\'' +
-                ", id=" + id +
+                "id=" + id +
                 ", nameProduct='" + nameProduct + '\'' +
+                ", namePhone='" + namePhone + '\'' +
+                ", brand='" + brand + '\'' +
                 ", priceProduct=" + priceProduct +
                 '}';
     }
