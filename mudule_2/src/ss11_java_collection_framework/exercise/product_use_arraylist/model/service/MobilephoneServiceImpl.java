@@ -6,8 +6,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MobilephoneServiceImpl implements IServiceProduct {
-    MobilePhone[] mobilePhonesList = new MobilePhone[100];
-    ArrayList<MobilePhone> mobilePhonesArrayList = new ArrayList<>();
+    static ArrayList<MobilePhone> mobilePhonesArrayList = new ArrayList<>();
+    static {
+        mobilePhonesArrayList.add(new MobilePhone(1,"mobilephone",5000,"13 pro max","apple"));
+        mobilePhonesArrayList.add(new MobilePhone(2,"mobilephone",3000,"note 20","samsung"));
+        mobilePhonesArrayList.add(new MobilePhone(3,"mobilephone",2000,"z3","sony"));
+    }
 
 
 
