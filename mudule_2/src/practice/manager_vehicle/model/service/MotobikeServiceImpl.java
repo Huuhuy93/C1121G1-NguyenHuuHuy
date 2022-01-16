@@ -1,20 +1,21 @@
 package practice.manager_vehicle.model.service;
 
-import practice.manager_vehicle.model.Car;
+import practice.manager_vehicle.model.Motobike;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class CarServiceImpl implements IServiceVehicle {
+public class MotobikeServiceImpl implements IServiceVehicle {
 
-    static ArrayList<Car> carsList = new ArrayList<>();
+    static ArrayList<Motobike> motobikeList = new ArrayList<>();
+
     static {
-        carsList.add(new Car("43A-212.56","Toyota",2019,
-                "Nguyễn Văn A",5,"Du lịch"));
-        carsList.add(new Car("43B-453.88","Huyndai",2020,
-                "Nguyễn Văn B",45,"Xe  khách"));
-        carsList.add(new Car("43B-453.89","Ford",2020,
-                "Nguyễn Văn C",16,"Xe  khách"));
+        motobikeList.add(new Motobike("43-K1-678.56","Yamaha",
+                2019,"Nguyễn Văn A",100));
+        motobikeList.add(new Motobike("43-H1-345.89","Honda",2019,
+                "Nguyễn Văn B",150));
+        motobikeList.add(new Motobike("43-AK-765.23","Yamaha",2019,
+                "Nguyễn Văn C",50));
     }
 
 
@@ -34,20 +35,16 @@ public class CarServiceImpl implements IServiceVehicle {
         System.out.println("Chủ sở hữu");
         String owner = sc.nextLine();
 
-        System.out.println("Số chỗ ngồi");
-        int numberSeats = Integer.parseInt(sc.nextLine());
+        System.out.println("Công suất");
+        int wattage = Integer.parseInt(sc.nextLine());
 
-        System.out.println("Kiểu xe");
-        String typeCar = sc.nextLine();
-
-        Car cars = new Car(licensePlate,manufacturer,year,owner,numberSeats,typeCar);
-        carsList.add(cars);
-
+        Motobike motobike = new Motobike(licensePlate, manufacturer, year, owner, wattage);
+        motobikeList.add(motobike);
     }
 
     @Override
     public void display() {
-        for (Car temp: carsList) {
+        for (Motobike temp : motobikeList) {
             if (temp == null) {
                 break;
             } else {
@@ -61,14 +58,13 @@ public class CarServiceImpl implements IServiceVehicle {
         Scanner sc = new Scanner(System.in);
         System.out.println("Nhập biển số xe cần xóa");
         String licensePlateDelete = sc.nextLine();
-        for (int i = 0; i < carsList.size(); i++) {
-            if (carsList.get(i).getLicensePlate().equals(licensePlateDelete)) {
-                carsList.remove(i);
+        for (int i = 0; i < motobikeList.size(); i++) {
+            if (motobikeList.get(i).getLicensePlate().equals(licensePlateDelete)) {
+                motobikeList.remove(i);
                 System.out.println("Đã xóa thành công");
             } else {
                 break;
             }
         }
-
     }
 }

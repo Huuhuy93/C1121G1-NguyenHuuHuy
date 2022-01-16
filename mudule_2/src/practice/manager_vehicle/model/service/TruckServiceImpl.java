@@ -1,26 +1,27 @@
 package practice.manager_vehicle.model.service;
 
-import practice.manager_vehicle.model.Car;
+import practice.manager_vehicle.model.Motobike;
+import practice.manager_vehicle.model.Truck;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class CarServiceImpl implements IServiceVehicle {
+public class TruckServiceImpl implements IServiceVehicle {
 
-    static ArrayList<Car> carsList = new ArrayList<>();
+    static ArrayList<Truck> trucksList = new ArrayList<>();
+
     static {
-        carsList.add(new Car("43A-212.56","Toyota",2019,
-                "Nguyễn Văn A",5,"Du lịch"));
-        carsList.add(new Car("43B-453.88","Huyndai",2020,
-                "Nguyễn Văn B",45,"Xe  khách"));
-        carsList.add(new Car("43B-453.89","Ford",2020,
-                "Nguyễn Văn C",16,"Xe  khách"));
+        trucksList.add(new Truck("43C-012.34","Huyndai",2019,
+                "Nguyễn Văn A",3));
+        trucksList.add(new Truck("43C-47.678","Dongfeng",2019,
+                "Nguyễn Văn A",9));
+        trucksList.add(new Truck("43C-45.235","Hino",2021,
+                "Nguyễn Văn C",12));
     }
-
 
     @Override
     public void add() {
-        Scanner sc = new Scanner(System.in);
+        Scanner sc =new Scanner(System.in);
 
         System.out.println("Nhập biển kiểm soát");
         String licensePlate = sc.nextLine();
@@ -34,20 +35,13 @@ public class CarServiceImpl implements IServiceVehicle {
         System.out.println("Chủ sở hữu");
         String owner = sc.nextLine();
 
-        System.out.println("Số chỗ ngồi");
-        int numberSeats = Integer.parseInt(sc.nextLine());
-
-        System.out.println("Kiểu xe");
-        String typeCar = sc.nextLine();
-
-        Car cars = new Car(licensePlate,manufacturer,year,owner,numberSeats,typeCar);
-        carsList.add(cars);
-
+        System.out.println("Trọng tải");
+        int tonnage = Integer.parseInt(sc.nextLine());
     }
 
     @Override
     public void display() {
-        for (Car temp: carsList) {
+        for (Truck temp : trucksList) {
             if (temp == null) {
                 break;
             } else {
@@ -61,14 +55,13 @@ public class CarServiceImpl implements IServiceVehicle {
         Scanner sc = new Scanner(System.in);
         System.out.println("Nhập biển số xe cần xóa");
         String licensePlateDelete = sc.nextLine();
-        for (int i = 0; i < carsList.size(); i++) {
-            if (carsList.get(i).getLicensePlate().equals(licensePlateDelete)) {
-                carsList.remove(i);
+        for (int i = 0; i < trucksList.size(); i++) {
+            if (trucksList.get(i).getLicensePlate().equals(licensePlateDelete)) {
+                trucksList.remove(i);
                 System.out.println("Đã xóa thành công");
             } else {
                 break;
             }
         }
-
     }
 }
