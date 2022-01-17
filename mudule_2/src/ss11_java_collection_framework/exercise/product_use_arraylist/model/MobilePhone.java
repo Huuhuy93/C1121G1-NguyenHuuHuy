@@ -1,6 +1,6 @@
 package ss11_java_collection_framework.exercise.product_use_arraylist.model;
 
-public class MobilePhone extends Product{
+public class MobilePhone extends Product {
     private String namePhone;
     private String brand;
 
@@ -43,4 +43,5 @@ public class MobilePhone extends Product{
                 ", priceProduct=" + priceProduct +
                 '}';
     }
+
 }

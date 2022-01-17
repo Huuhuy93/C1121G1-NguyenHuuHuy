@@ -41,6 +41,7 @@ public class MainMenuProduct {
                 case 5:
                     System.out.println("search");
                     mobilephoneService.search();
+                    break;
                 case 6:
                     flag = false;
             }

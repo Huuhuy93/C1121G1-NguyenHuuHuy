@@ -20,7 +20,7 @@ public class MainMenuVehicle {
                     "3.\tXóa phương tiện \n" +
                     "4.\tThoát\n");
             System.out.println("Chọn chức năng :");
-            chooseMenu = sc.nextInt();
+            chooseMenu = Integer.parseInt(sc.nextLine());
             switch (chooseMenu) {
                 case 1: {
                     System.out.println("a.\tThêm mới ô tô.\n" +
@@ -68,12 +68,32 @@ public class MainMenuVehicle {
                 }
 
                 case 3: {
-                    System.out.println("Xóa");
-                    carService.delete();
-                    motobikeService.delete();
-                    truckService.delete();
-
-                    break;
+                    System.out.println("Bạn có chắc chắn muốn xóa ?");
+                    System.out.println("1. Yes");
+                    System.out.println("2. No");
+                    int chooseDelete = Integer.parseInt(sc.nextLine());
+                    switch (chooseDelete) {
+                        case 1:
+                            System.out.println("11. Xóa ô tô");
+                            System.out.println("12. Xóa xe máy");
+                            System.out.println("13. Xóa xe tải");
+                            int chooseType = Integer.parseInt(sc.nextLine());
+                            switch (chooseType) {
+                                case 11:
+                                    carService.delete();
+                                    break;
+                                case 12:
+                                    motobikeService.delete();
+                                    break;
+                                case 13:
+                                    truckService.delete();
+                                    break;
+                            }
+                            showMainMenuVehicle();
+                            break;
+                        case 2:
+                            showMainMenuVehicle();
+                    }
                 }
 
                 case 4: {

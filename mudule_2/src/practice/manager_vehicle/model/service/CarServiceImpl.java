@@ -65,7 +65,6 @@ public class CarServiceImpl implements IServiceVehicle {
             if (carsList.get(i).getLicensePlate().equals(licensePlateDelete)) {
                 carsList.remove(i);
                 System.out.println("Đã xóa thành công");
-            } else {
                 break;
             }
         }

@@ -1,8 +1,10 @@
 package ss11_java_collection_framework.exercise.product_use_arraylist.model.service;
 
 import ss11_java_collection_framework.exercise.product_use_arraylist.model.MobilePhone;
+import ss11_java_collection_framework.exercise.product_use_arraylist.model.PriceComparator;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class MobilephoneServiceImpl implements IServiceProduct {
@@ -12,6 +14,12 @@ public class MobilephoneServiceImpl implements IServiceProduct {
         mobilePhonesList.add(new MobilePhone(1, "mobilephone", 5000, "13 pro max", "apple"));
         mobilePhonesList.add(new MobilePhone(2, "mobilephone", 3000, "note 20", "samsung"));
         mobilePhonesList.add(new MobilePhone(3, "mobilephone", 2000, "z3", "sony"));
+
+        PriceComparator priceComparator = new PriceComparator();
+        Collections.sort(mobilePhonesList, priceComparator);
+        for (MobilePhone mobilephoneSort: mobilePhonesList) {
+            System.out.println(mobilephoneSort.toString());
+        }
     }
 
 
@@ -31,6 +39,8 @@ public class MobilephoneServiceImpl implements IServiceProduct {
         MobilePhone mobilePhone = new MobilePhone(id, nameProduct, price, name, brand);
         mobilePhonesList.add(mobilePhone);
         System.err.println("Thêm mới thành công");
+        PriceComparator priceComparator = new PriceComparator();
+        Collections.sort(mobilePhonesList, priceComparator);
     }
 
     @Override
