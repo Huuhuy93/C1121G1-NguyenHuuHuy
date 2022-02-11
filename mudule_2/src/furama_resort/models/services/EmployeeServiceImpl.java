@@ -64,6 +64,8 @@ public class EmployeeServiceImpl implements IEmployeeService{
         Employee employee = new Employee(fullName, dateOfBirth, gender, identityCardNumber, phoneNumber,
                 email, employeeCode, level, position, salary);
         employeeList.add(employee);
+        System.out.println(employee);
+        System.out.println("successfully added new!");
     }
 
     @Override
@@ -71,8 +73,9 @@ public class EmployeeServiceImpl implements IEmployeeService{
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter full name need edit: ");
         String nameEdit = sc.nextLine();
-        for (Employee employee: employeeList) {
-            if (employee.getFullName().equalsIgnoreCase(nameEdit)) {
+
+        for (int i = 0; i < employeeList.size(); i++) {
+            if (employeeList.get(i).getFullName().equalsIgnoreCase(nameEdit)) {
                 System.out.println("Enter full name need edit: ");
                 String fullName = sc.nextLine();
 
@@ -103,6 +106,24 @@ public class EmployeeServiceImpl implements IEmployeeService{
                 System.out.println("Enter salary need edit: ");
                 int salary = Integer.parseInt(sc.nextLine());
 
+                employeeList.get(i).setFullName(fullName);
+                employeeList.get(i).setDateOfBirth(dateOfBirth);
+                employeeList.get(i).setGender(gender);
+                employeeList.get(i).setIdentityCardNumber(identityCardNumber);
+                employeeList.get(i).setPhoneNumber(phoneNumber);
+                employeeList.get(i).setEmail(email);
+                employeeList.get(i).setEmployeeCode(employeeCode);
+                employeeList.get(i).setLevel(level);
+                employeeList.get(i).setPosition(position);
+                employeeList.get(i).setSalary(salary);
+
+                System.out.println(employeeList.get(i));
+                System.out.println("successfully edit!");
+                break;
+
+            } else {
+                System.out.println("The name to be edit is not in the list!");
+                break;
             }
         }
     }
