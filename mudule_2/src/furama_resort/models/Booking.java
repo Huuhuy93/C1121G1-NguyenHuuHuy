@@ -1,32 +1,29 @@
 package furama_resort.models;
 
 public class Booking {
-    private String bookingCode;
+    private int idBooking;
     private String startDay;
     private String endDay;
-    private String customerCode;
-    private String nameService;
-    private String typeService;
+    private Customer customer;
+    private Facility facility;
 
     public Booking() {
     }
 
-    public Booking(String bookingCode, String startDay, String endDay, String customerCode,
-                   String nameService, String typeService) {
-        this.bookingCode = bookingCode;
+    public Booking(int idBooking, String startDay, String endDay, Customer customer, Facility facility) {
+        this.idBooking = idBooking;
         this.startDay = startDay;
         this.endDay = endDay;
-        this.customerCode = customerCode;
-        this.nameService = nameService;
-        this.typeService = typeService;
+        this.customer = customer;
+        this.facility = facility;
     }
 
-    public String getBookingCode() {
-        return bookingCode;
+    public int getIdBooking() {
+        return idBooking;
     }
 
-    public void setBookingCode(String bookingCode) {
-        this.bookingCode = bookingCode;
+    public void setIdBooking(int idBooking) {
+        this.idBooking = idBooking;
     }
 
     public String getStartDay() {
@@ -45,39 +42,30 @@ public class Booking {
         this.endDay = endDay;
     }
 
-    public String getCustomerCode() {
-        return customerCode;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setCustomerCode(String customerCode) {
-        this.customerCode = customerCode;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
-    public String getNameService() {
-        return nameService;
+    public Facility getFacility() {
+        return facility;
     }
 
-    public void setNameService(String nameService) {
-        this.nameService = nameService;
-    }
-
-    public String getTypeService() {
-        return typeService;
-    }
-
-    public void setTypeService(String typeService) {
-        this.typeService = typeService;
+    public void setFacility(Facility facility) {
+        this.facility = facility;
     }
 
     @Override
     public String toString() {
         return "Booking{" +
-                "bookingCode='" + bookingCode + '\'' +
+                "idBooking=" + idBooking +
                 ", startDay='" + startDay + '\'' +
                 ", endDay='" + endDay + '\'' +
-                ", customerCode='" + customerCode + '\'' +
-                ", nameService='" + nameService + '\'' +
-                ", typeService='" + typeService + '\'' +
+                ", customer=" + customer +
+                ", facility=" + facility +
                 '}';
     }
 }

@@ -16,7 +16,7 @@ public class FuramaController {
         FacilityServiceImpl facilityService = new FacilityServiceImpl();
         BookingServiceImpl bookingService = new BookingServiceImpl();
 
-        int chooseMenu;
+        int chooseMenu = 0;
         boolean flag = true;
 
         do {
@@ -27,17 +27,25 @@ public class FuramaController {
                     "5.\tPromotion Management\n" +
                     "6.\tExit!\n");
             System.out.println("Please select function :");
-            chooseMenu = Integer.parseInt(sc.nextLine());
+            try {
+                chooseMenu = Integer.parseInt(sc.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Bạn đã nhập sai định dạng, vui lòng nhập lại");
+            }
 
             switch (chooseMenu) {
                 case 1:
-                    boolean flag1 = true;
                     do {
                         System.out.println("1\tDisplay list employees\n" +
                                 "2\tAdd new employee\n" +
                                 "3\tEdit employee\n" +
                                 "4\tReturn main menu\n");
-                        int typeEmployee = Integer.parseInt(sc.nextLine());
+                        int typeEmployee = 0;
+                        try {
+                            typeEmployee = Integer.parseInt(sc.nextLine());
+                        } catch (NumberFormatException e) {
+                            System.out.println("Bạn đã nhập sai định dạng, vui lòng nhập lại");
+                        }
 
                         switch (typeEmployee) {
                             case 1:
@@ -56,19 +64,23 @@ public class FuramaController {
                                 displayMainMenu();
                                 break;
                         }
-                    } while (flag1);
+                    } while (flag);
 
                     break;
 
 
                 case 2:
-                    boolean flag2 = true;
                     do {
                         System.out.println("1.\tDisplay list customers\n" +
                                 "2.\tAdd new customer\n" +
                                 "3.\tEdit customer\n" +
                                 "4\tReturn main menu\n");
-                        int typeCustomers = Integer.parseInt(sc.nextLine());
+                        int typeCustomers = 0;
+                        try {
+                            typeCustomers = Integer.parseInt(sc.nextLine());
+                        } catch (NumberFormatException e) {
+                            System.out.println("Bạn đã nhập sai định dạng, vui lòng nhập lại");
+                        }
 
                         switch (typeCustomers) {
                             case 1:
@@ -87,19 +99,23 @@ public class FuramaController {
                                 displayMainMenu();
                                 break;
                         }
-                    } while (flag2);
+                    } while (flag);
 
                     break;
 
 
                 case 3:
-                    boolean flag3 = true;
                     do {
                         System.out.println("1\tDisplay list facility\n" +
                                 "2\tAdd new facility\n" +
                                 "3\tDisplay list facility maintenance" +
                                 "4\tReturn main menu\n");
-                        int typeFacility = Integer.parseInt(sc.nextLine());
+                        int typeFacility = 0;
+                        try {
+                            typeFacility = Integer.parseInt(sc.nextLine());
+                        } catch (NumberFormatException e) {
+                            System.out.println("Bạn đã nhập sai định dạng, vui lòng nhập lại");
+                        }
 
                         switch (typeFacility) {
                             case 1:
@@ -108,7 +124,33 @@ public class FuramaController {
                                 break;
                             case 2:
                                 System.out.println("Add new facility");
-                                facilityService.add();
+
+                                do {
+                                    System.out.println("1.\tAdd new Villa\n" +
+                                            "2.\tAdd new House\n" +
+                                            "3.\tAdd new Room\n" +
+                                            "4\tReturn main menu\n");
+                                    int typeAddFacility = Integer.parseInt(sc.nextLine());
+
+                                    switch (typeAddFacility) {
+                                        case 1:
+                                            System.out.println("Add new Villa");
+                                            facilityService.addNewVilla();
+                                            break;
+                                        case 2:
+                                            System.out.println("Add new House");
+                                            facilityService.addNewHouse();
+                                            break;
+                                        case 3:
+                                            System.out.println("Add new Room");
+                                            facilityService.addNewRoom();
+                                            break;
+                                        case 4:
+                                            displayMainMenu();
+                                            break;
+                                    }
+                                } while (flag);
+
                                 break;
                             case 3:
                                 System.out.println("Display list facility maintenance");
@@ -117,13 +159,12 @@ public class FuramaController {
                                 displayMainMenu();
                                 break;
                         }
-                    } while (flag3);
+                    } while (flag);
 
                     break;
 
 
                 case 4:
-                    boolean flag4 = true;
                     do {
                         System.out.println("1.\tAdd new booking\n" +
                                 "2.\tDisplay list booking\n" +
@@ -131,7 +172,12 @@ public class FuramaController {
                                 "4.\tDisplay list contracts\n" +
                                 "5.\tEdit contracts\n" +
                                 "6.\tReturn main menu\n");
-                        int typeBooking = Integer.parseInt(sc.nextLine());
+                        int typeBooking = 0;
+                        try {
+                            typeBooking = Integer.parseInt(sc.nextLine());
+                        } catch (NumberFormatException e) {
+                            System.out.println("Bạn đã nhập sai định dạng, vui lòng nhập lại");
+                        }
                         switch (typeBooking) {
                             case 1:
                                 System.out.println("Add new booking");
@@ -143,7 +189,7 @@ public class FuramaController {
                                 break;
                             case 3:
                                 System.out.println("Create new constracts");
-                                bookingService.create();
+
                                 break;
                             case 4:
                                 System.out.println("Display list contracts");
@@ -156,17 +202,21 @@ public class FuramaController {
                                 displayMainMenu();
                                 break;
                         }
-                    } while (flag4);
+                    } while (flag);
 
                     break;
 
                 case 5:
-                    boolean flag5 = true;
                     do {
                         System.out.println("1.\tDisplay list customers use service\n" +
                                 "2.\tDisplay list customers get voucher\n" +
                                 "3.\tReturn main menu\n");
-                        int typePromotion = Integer.parseInt(sc.nextLine());
+                        int typePromotion = 0;
+                        try {
+                            typePromotion = Integer.parseInt(sc.nextLine());
+                        } catch (NumberFormatException e) {
+                            System.out.println("Bạn đã nhập sai định dạng, vui lòng nhập lại");
+                        }
                         switch (typePromotion) {
                             case 1:
                                 System.out.println("Display list customers use service");
@@ -178,7 +228,7 @@ public class FuramaController {
                                 displayMainMenu();
                                 break;
                         }
-                    } while (flag5);
+                    } while (flag);
 
                     break;
 

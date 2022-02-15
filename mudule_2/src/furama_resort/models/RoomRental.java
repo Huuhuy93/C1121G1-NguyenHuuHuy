@@ -6,13 +6,12 @@ public class RoomRental extends Facility {
     public RoomRental() {
     }
 
-    public RoomRental(String serviceName, int useArea, int rentCost, int maxQuantilyPeople, String rentalType) {
-        super(serviceName, useArea, rentCost, maxQuantilyPeople, rentalType);
+    public RoomRental(String idFacility, String serviceName, int useArea, int rentCost, int maxQuantilyPeople, String rentalType) {
+        super(idFacility, serviceName, useArea, rentCost, maxQuantilyPeople, rentalType);
     }
 
-    public RoomRental(String serviceName, int useArea, int rentCost, int maxQuantilyPeople, String rentalType,
-                      String freeServiceIncluded) {
-        super(serviceName, useArea, rentCost, maxQuantilyPeople, rentalType);
+    public RoomRental(String idFacility, String serviceName, int useArea, int rentCost, int maxQuantilyPeople, String rentalType, String freeServiceIncluded) {
+        super(idFacility, serviceName, useArea, rentCost, maxQuantilyPeople, rentalType);
         this.freeServiceIncluded = freeServiceIncluded;
     }
 
@@ -27,10 +26,11 @@ public class RoomRental extends Facility {
     @Override
     public String toString() {
         return "RoomRental{" +
-                "serviceName='" + serviceName + '\'' +
-                ", useArea=" + useArea +
-                ", rentCost=" + rentCost +
-                ", maxQuantilyPeople=" + maxQuantilyPeoples +
+                "id='" + idFacility + '\'' +
+                ", serviceName='" + serviceName + '\'' +
+                ", useArea=" + useArea + '\'' +
+                ", rentCost=" + rentCost + '\'' +
+                ", maxQuantilyPeople=" + maxQuantilyPeoples + '\'' +
                 ", rentalType='" + rentalType + '\'' +
                 "freeServiceIncluded='" + freeServiceIncluded + '\'' +
                 '}';

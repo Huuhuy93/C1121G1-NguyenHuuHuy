@@ -2,19 +2,18 @@ package furama_resort.models;
 
 public class VillaRental extends Facility {
     private String standardRoom;
-    private int poolArea;
+    private double poolArea;
     private int floorsAmount;
 
     public VillaRental() {
     }
 
-    public VillaRental(String serviceName, int useArea, int rentCost, int maxQuantilyPeople, String rentalType) {
-        super(serviceName, useArea, rentCost, maxQuantilyPeople, rentalType);
+    public VillaRental(String idFacility, String serviceName, int useArea, int rentCost, int maxQuantilyPeople, String rentalType) {
+        super(idFacility, serviceName, useArea, rentCost, maxQuantilyPeople, rentalType);
     }
 
-    public VillaRental(String serviceName, int useArea, int rentCost, int maxQuantilyPeople, String rentalType,
-                       String standardRoom, int poolArea, int floorsAmount) {
-        super(serviceName, useArea, rentCost, maxQuantilyPeople, rentalType);
+    public VillaRental(String idFacility, String serviceName, int useArea, int rentCost, int maxQuantilyPeople, String rentalType, String standardRoom, double poolArea, int floorsAmount) {
+        super(idFacility, serviceName, useArea, rentCost, maxQuantilyPeople, rentalType);
         this.standardRoom = standardRoom;
         this.poolArea = poolArea;
         this.floorsAmount = floorsAmount;
@@ -28,11 +27,11 @@ public class VillaRental extends Facility {
         this.standardRoom = standardRoom;
     }
 
-    public int getPoolArea() {
+    public double getPoolArea() {
         return poolArea;
     }
 
-    public void setPoolArea(int poolArea) {
+    public void setPoolArea(double poolArea) {
         this.poolArea = poolArea;
     }
 
@@ -47,13 +46,14 @@ public class VillaRental extends Facility {
     @Override
     public String toString() {
         return "VillaRental{" +
-                "serviceName='" + serviceName + '\'' +
-                ", useArea=" + useArea +
-                ", rentCost=" + rentCost +
-                ", maxQuantilyPeople=" + maxQuantilyPeoples +
+                "id='" + idFacility + '\'' +
+                ", serviceName='" + serviceName + '\'' +
+                ", useArea=" + useArea + '\'' +
+                ", rentCost=" + rentCost + '\'' +
+                ", maxQuantilyPeople=" + maxQuantilyPeoples + '\'' +
                 ", rentalType='" + rentalType + '\'' +
                 "standardRoom='" + standardRoom + '\'' +
-                ", poolArea=" + poolArea +
+                ", poolArea=" + poolArea + '\'' +
                 ", quantilyFloor=" + floorsAmount +
                 '}';
     }

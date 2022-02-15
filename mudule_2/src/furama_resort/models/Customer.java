@@ -8,14 +8,14 @@ public class Customer extends Person {
     public Customer() {
     }
 
-    public Customer(String fullName, String dateOfBirth, String gender, int identityCardNumber,
+    public Customer(int id, String fullName, String dateOfBirth, String gender, int identityCardNumber,
                     String phoneNumber, String email) {
-        super(fullName, dateOfBirth, gender, identityCardNumber, phoneNumber, email);
+        super(id, fullName, dateOfBirth, gender, identityCardNumber, phoneNumber, email);
     }
 
-    public Customer(String fullName, String dateOfBirth, String gender, int identityCardNumber, String phoneNumber,
+    public Customer(int id, String fullName, String dateOfBirth, String gender, int identityCardNumber, String phoneNumber,
                     String email, String customerCode, String typeCustomer, String address) {
-        super(fullName, dateOfBirth, gender, identityCardNumber, phoneNumber, email);
+        super(id, fullName, dateOfBirth, gender, identityCardNumber, phoneNumber, email);
         this.customerCode = customerCode;
         this.typeCustomer = typeCustomer;
         this.address = address;
@@ -48,13 +48,14 @@ public class Customer extends Person {
     @Override
     public String toString() {
         return "Customer{" +
-                "customerCode='" + customerCode + '\'' +
-                "fullName='" + fullName + '\'' +
+                "id='" + id + '\'' +
+                ", fullName='" + fullName + '\'' +
                 ", dateOfBirth='" + dateOfBirth + '\'' +
                 ", gender='" + gender + '\'' +
                 ", identityCardNumber=" + identityCardNumber +
                 ", phoneNumber=" + phoneNumber +
                 ", email='" + email + '\'' +
+                ", customerCode='" + customerCode + '\'' +
                 ", typeCustomer='" + typeCustomer + '\'' +
                 ", address='" + address + '\'' +
                 '}';

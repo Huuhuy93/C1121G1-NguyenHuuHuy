@@ -7,13 +7,12 @@ public class HouseRental extends Facility {
     public HouseRental() {
     }
 
-    public HouseRental(String serviceName, int useArea, int rentCost, int maxQuantilyPeople, String rentalType) {
-        super(serviceName, useArea, rentCost, maxQuantilyPeople, rentalType);
+    public HouseRental(String idFacility, String serviceName, int useArea, int rentCost, int maxQuantilyPeople, String rentalType) {
+        super(idFacility, serviceName, useArea, rentCost, maxQuantilyPeople, rentalType);
     }
 
-    public HouseRental(String serviceName, int useArea, int rentCost, int maxQuantilyPeople, String rentalType,
-                       String standardRoom, int floorsAmount) {
-        super(serviceName, useArea, rentCost, maxQuantilyPeople, rentalType);
+    public HouseRental(String idFacility, String serviceName, int useArea, int rentCost, int maxQuantilyPeople, String rentalType, String standardRoom, int floorsAmount) {
+        super(idFacility, serviceName, useArea, rentCost, maxQuantilyPeople, rentalType);
         this.standardRoom = standardRoom;
         this.floorsAmount = floorsAmount;
     }
@@ -37,7 +36,8 @@ public class HouseRental extends Facility {
     @Override
     public String toString() {
         return "HouseRental{" +
-                "serviceName='" + serviceName + '\'' +
+                "id='" + idFacility + '\'' +
+                ", serviceName='" + serviceName + '\'' +
                 ", useArea=" + useArea +
                 ", rentCost=" + rentCost +
                 ", maxQuantilyPeople=" + maxQuantilyPeoples +

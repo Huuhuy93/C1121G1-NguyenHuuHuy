@@ -1,6 +1,7 @@
 package furama_resort.models;
 
-public class Facility {
+public abstract class Facility {
+    protected String idFacility;
     protected String serviceName;
     protected int useArea;
     protected int rentCost;
@@ -10,12 +11,21 @@ public class Facility {
     public Facility() {
     }
 
-    public Facility(String serviceName, int useArea, int rentCost, int maxQuantilyPeople, String rentalType) {
+    public Facility(String idFacility, String serviceName, int useArea, int rentCost, int maxQuantilyPeople, String rentalType) {
+        this.idFacility = idFacility;
         this.serviceName = serviceName;
         this.useArea = useArea;
         this.rentCost = rentCost;
         this.maxQuantilyPeoples = maxQuantilyPeople;
         this.rentalType = rentalType;
+    }
+
+    public String getIdFacility() {
+        return idFacility;
+    }
+
+    public void setIdFacility(String idFacility) {
+        this.idFacility = idFacility;
     }
 
     public String getServiceName() {
@@ -61,10 +71,11 @@ public class Facility {
     @Override
     public String toString() {
         return "RentalService{" +
-                "serviceName='" + serviceName + '\'' +
-                ", useArea=" + useArea +
-                ", rentCost=" + rentCost +
-                ", maxQuantilyPeople=" + maxQuantilyPeoples +
+                "id='" + idFacility + '\'' +
+                ", serviceName='" + serviceName + '\'' +
+                ", useArea=" + useArea + '\'' +
+                ", rentCost=" + rentCost + '\'' +
+                ", maxQuantilyPeople=" + maxQuantilyPeoples + '\'' +
                 ", rentalType='" + rentalType + '\'' +
                 '}';
     }
