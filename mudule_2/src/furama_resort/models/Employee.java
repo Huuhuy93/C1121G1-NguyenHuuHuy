@@ -1,35 +1,40 @@
 package furama_resort.models;
 
 public class Employee extends Person{
-    private String employeeCode;
+    private static int employeeCode; //tự động tăng Customer theo id.
     private String level;
     private String position;
     private int salary;
+    private int employeeId;
 
 
     public Employee() {
+        this.employeeId = this.employeeCode++ +1; //Bắt đầu từ 1.
     }
 
-    public Employee(int id, String fullName, String dateOfBirth, String gender,
-                    int identityCardNumber, String phoneNumber, String email) {
-        super(id, fullName, dateOfBirth, gender, identityCardNumber, phoneNumber, email);
+    public Employee(String level, String position, int salary) {
+        this.employeeId = this.employeeCode++ +1;
+        this.level = level;
+        this.position = position;
+        this.salary = salary;
     }
 
-    public Employee(int id, String fullName, String dateOfBirth, String gender, int identityCardNumber, String phoneNumber,
-                    String email, String employeeCode, String level, String position, int salary) {
-        super(id, fullName, dateOfBirth, gender, identityCardNumber, phoneNumber, email);
+    public Employee(String fullName, String dateOfBirth, String gender, int identityCardNumber, String phoneNumber,
+                    String email, String level, String position, int salary) {
+        super(fullName, dateOfBirth, gender, identityCardNumber, phoneNumber, email);
+        this.employeeId = this.employeeCode++ +1;
         this.employeeCode = employeeCode;
         this.level = level;
         this.position = position;
         this.salary = salary;
     }
 
-    public String getEmployeeCode() {
+    public static int getEmployeeCode() {
         return employeeCode;
     }
 
-    public void setEmployeeCode(String employeeCode) {
-        this.employeeCode = employeeCode;
+    public static void setEmployeeCode(int employeeCode) {
+        Employee.employeeCode = employeeCode;
     }
 
     public String getLevel() {
@@ -56,20 +61,32 @@ public class Employee extends Person{
         this.salary = salary;
     }
 
+    public int getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setEmployeeId(int employeeId) {
+        this.employeeId = employeeId;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
-                "id='" + id + '\'' +
+                "id='" + employeeId + '\'' +
                 ", fullName='" + fullName + '\'' +
                 ", dateOfBirth='" + dateOfBirth + '\'' +
                 ", gender='" + gender + '\'' +
                 ", identityCardNumber=" + identityCardNumber +
                 ", phoneNumber=" + phoneNumber +
                 ", email='" + email + '\'' +
-                ", employeeCode='" + employeeCode + '\'' +
                 ", level='" + level + '\'' +
                 ", position='" + position + '\'' +
                 ", salary=" + salary +
                 '}';
+    }
+
+    @Override
+    public String getInfo() {
+        return this.employeeId+","+ super.getInfo()+","+this.level+","+this.position+","+this.salary;
     }
 }

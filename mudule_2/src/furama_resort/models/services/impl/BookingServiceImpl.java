@@ -1,14 +1,15 @@
-package furama_resort.models.services;
+package furama_resort.models.services.impl;
 
 import furama_resort.models.Booking;
 import furama_resort.models.Customer;
 import furama_resort.models.Facility;
 import furama_resort.models.VillaRental;
+import furama_resort.models.services.IBookingService;
 import furama_resort.utils.BookingCompare;
 
 import java.util.*;
 
-public class BookingServiceImpl implements IBookingService{
+public class BookingServiceImpl implements IBookingService {
     static Set<Booking> bookingSet = new TreeSet<>(new BookingCompare());
 
     static List<Customer> customerList = new ArrayList<>();
@@ -19,10 +20,6 @@ public class BookingServiceImpl implements IBookingService{
 
 
     static {
-        customerList.add(new Customer(1, "Huy", "22/2/1990", "nam", 194543653,
-                "0909111222", "abc@gmail.com", "C100", "Gold", "Đà Nẵng"));
-        customerList.add(new Customer(2, "Hùng", "22/3/1991", "nam", 194212323,
-                "0905554323", "abcd@gmail.com", "C101", "Platinum", "Quảng Nam"));
 
         facilityIntegerMap.put(new VillaRental("1", "Villa 1", 100, 1000, 6,
                 "day", "normal", 200, 2), 0);
@@ -67,7 +64,7 @@ public class BookingServiceImpl implements IBookingService{
 
             while (flag) {
                 for (Customer customer: customerList) {
-                    if (id==customer.getId()) {
+                    if (id==customer.getCustomerId()) {
                         flag = false;
                         return customer;
                     }

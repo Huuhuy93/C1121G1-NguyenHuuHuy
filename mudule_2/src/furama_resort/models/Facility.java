@@ -1,12 +1,12 @@
 package furama_resort.models;
 
 public abstract class Facility {
-    protected String idFacility;
-    protected String serviceName;
-    protected int useArea;
-    protected int rentCost;
-    protected int maxQuantilyPeoples;
-    protected String rentalType;
+    private String idFacility;
+    private String serviceName;
+    private int useArea;
+    private int rentCost;
+    private int maxQuantilyPeoples;
+    private String rentalType;
 
     public Facility() {
     }
@@ -78,6 +78,11 @@ public abstract class Facility {
                 ", maxQuantilyPeople=" + maxQuantilyPeoples + '\'' +
                 ", rentalType='" + rentalType + '\'' +
                 '}';
+    }
+
+    public String getInfoFacility() {
+        return this.idFacility+","+this.serviceName+","+this.useArea+","+this.rentCost+","
+                +this.maxQuantilyPeoples+","+this.rentalType;
     }
 }
 

@@ -1,7 +1,8 @@
 package furama_resort.models;
 
+import java.io.Serializable;
+
 public abstract class Person {
-    protected int id;
     protected String fullName;
     protected String dateOfBirth;
     protected String gender;
@@ -12,23 +13,14 @@ public abstract class Person {
     public Person() {
     }
 
-    public Person(int id, String fullName, String dateOfBirth, String gender, int identityCardNumber,
+    public Person(String fullName, String dateOfBirth, String gender, int identityCardNumber,
                   String phoneNumber, String email) {
-        this.id = id;
         this.fullName = fullName;
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
         this.identityCardNumber = identityCardNumber;
         this.phoneNumber = phoneNumber;
         this.email = email;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getFullName() {
@@ -82,13 +74,16 @@ public abstract class Person {
     @Override
     public String  toString() {
         return "Person{" +
-                "id='" + id + '\'' +
-                ", fullName='" + fullName + '\'' +
+                "fullName='" + fullName + '\'' +
                 ", dateOfBirth='" + dateOfBirth + '\'' +
                 ", gender='" + gender + '\'' +
                 ", identityCardNumber=" + identityCardNumber +
                 ", phoneNumber=" + phoneNumber +
                 ", email='" + email + '\'' +
                 '}';
+    }
+    public String getInfo() {
+        return this.fullName+","+this.dateOfBirth+","+this.gender+","+this.identityCardNumber
+                +","+this.phoneNumber+","+this.email;
     }
 }

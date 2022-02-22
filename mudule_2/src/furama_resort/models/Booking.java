@@ -68,4 +68,8 @@ public class Booking {
                 ", facility=" + facility +
                 '}';
     }
+
+    public String getInfoBooking() {
+        return this.idBooking+","+this.startDay+","+this.endDay+","+this.customer+","+this.facility;
+    }
 }

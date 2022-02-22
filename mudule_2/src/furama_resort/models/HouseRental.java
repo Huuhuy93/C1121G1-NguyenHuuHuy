@@ -7,11 +7,13 @@ public class HouseRental extends Facility {
     public HouseRental() {
     }
 
-    public HouseRental(String idFacility, String serviceName, int useArea, int rentCost, int maxQuantilyPeople, String rentalType) {
+    public HouseRental(String idFacility, String serviceName, int useArea, int rentCost,
+                       int maxQuantilyPeople, String rentalType) {
         super(idFacility, serviceName, useArea, rentCost, maxQuantilyPeople, rentalType);
     }
 
-    public HouseRental(String idFacility, String serviceName, int useArea, int rentCost, int maxQuantilyPeople, String rentalType, String standardRoom, int floorsAmount) {
+    public HouseRental(String idFacility, String serviceName, int useArea, int rentCost,
+                       int maxQuantilyPeople, String rentalType, String standardRoom, int floorsAmount) {
         super(idFacility, serviceName, useArea, rentCost, maxQuantilyPeople, rentalType);
         this.standardRoom = standardRoom;
         this.floorsAmount = floorsAmount;
@@ -36,14 +38,19 @@ public class HouseRental extends Facility {
     @Override
     public String toString() {
         return "HouseRental{" +
-                "id='" + idFacility + '\'' +
-                ", serviceName='" + serviceName + '\'' +
-                ", useArea=" + useArea +
-                ", rentCost=" + rentCost +
-                ", maxQuantilyPeople=" + maxQuantilyPeoples +
-                ", rentalType='" + rentalType + '\'' +
-                "standardRoom='" + standardRoom + '\'' +
-                ", quantilyFloor=" + floorsAmount +
+                "id='" + getIdFacility() + '\'' +
+                ", serviceName='" + getServiceName() + '\'' +
+                ", useArea=" + getUseArea() +
+                ", rentCost=" + getRentCost() +
+                ", maxQuantilyPeople=" + getMaxQuantilyPeoples() +
+                ", rentalType='" + getRentalType() + '\'' +
+                "standardRoom='" + getStandardRoom() + '\'' +
+                ", quantilyFloor=" + getFloorsAmount() +
                 '}';
+    }
+
+    @Override
+    public String getInfoFacility() {
+        return super.getInfoFacility()+","+this.getStandardRoom()+","+this.getFloorsAmount();
     }
 }

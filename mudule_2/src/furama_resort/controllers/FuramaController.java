@@ -1,10 +1,9 @@
 package furama_resort.controllers;
 
-import furama_resort.models.Employee;
-import furama_resort.models.services.BookingServiceImpl;
-import furama_resort.models.services.CustomerServiceImpl;
-import furama_resort.models.services.EmployeeServiceImpl;
-import furama_resort.models.services.FacilityServiceImpl;
+import furama_resort.models.services.impl.BookingServiceImpl;
+import furama_resort.models.services.impl.CustomerServiceImpl;
+import furama_resort.models.services.impl.EmployeeServiceImpl;
+import furama_resort.models.services.impl.FacilityServiceImpl;
 
 import java.util.Scanner;
 

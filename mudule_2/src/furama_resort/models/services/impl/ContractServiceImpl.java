@@ -1,6 +1,8 @@
-package furama_resort.models.services;
+package furama_resort.models.services.impl;
 
-public class ContractServiceImpl implements IContractService{
+import furama_resort.models.services.IContractService;
+
+public class ContractServiceImpl implements IContractService {
     @Override
     public void display() {
 

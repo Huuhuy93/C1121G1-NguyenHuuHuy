@@ -46,15 +46,20 @@ public class VillaRental extends Facility {
     @Override
     public String toString() {
         return "VillaRental{" +
-                "id='" + idFacility + '\'' +
-                ", serviceName='" + serviceName + '\'' +
-                ", useArea=" + useArea + '\'' +
-                ", rentCost=" + rentCost + '\'' +
-                ", maxQuantilyPeople=" + maxQuantilyPeoples + '\'' +
-                ", rentalType='" + rentalType + '\'' +
-                "standardRoom='" + standardRoom + '\'' +
-                ", poolArea=" + poolArea + '\'' +
-                ", quantilyFloor=" + floorsAmount +
+                "id='" + getIdFacility() + '\'' +
+                ", serviceName='" + getServiceName() + '\'' +
+                ", useArea=" + getUseArea() + '\'' +
+                ", rentCost=" + getRentCost() + '\'' +
+                ", maxQuantilyPeople=" + getMaxQuantilyPeoples() + '\'' +
+                ", rentalType='" + getRentalType() + '\'' +
+                "standardRoom='" + getStandardRoom() + '\'' +
+                ", poolArea=" + getPoolArea() + '\'' +
+                ", quantilyFloor=" + getFloorsAmount() +
                 '}';
+    }
+
+    @Override
+    public String getInfoFacility() {
+        return super.getInfoFacility()+","+this.getStandardRoom()+","+this.getPoolArea()+","+this.getFloorsAmount();
     }
 }

@@ -1,14 +1,17 @@
 package bai_thi_thuc_hanh_c1121g1.controllers;
 
 import bai_thi_c10.utils.NotFoundProductException;
+import bai_thi_thuc_hanh_c1121g1.models.services.BenhAnServiceImpl;
+import bai_thi_thuc_hanh_c1121g1.utils.NotFoundMedicalRecordException;
 
 import java.util.Scanner;
 
-public class MenuQuanLyBenhVien {
-    public void displayQuanLyBenhVien() {
+public class MenuQuanLyBenhAn {
+    public void displayQuanLyBenhAn() {
         Scanner sc = new Scanner(System.in);
+        BenhAnServiceImpl benhAnService = new BenhAnServiceImpl();
 
-        QLBV:
+        QLBA:
         do {
             try {
                 System.out.println("--CHƯƠNG TRÌNH QUẢN LÝ BỆNH ÁN BỆNH VIỆN –\n" +
@@ -29,13 +32,13 @@ public class MenuQuanLyBenhVien {
                             System.out.println("2. Bệnh án VIP");
                             System.out.println("3. Quay lại Quản lý bệnh án");
                             System.out.print("Chọn bệnh án: ");
-                            int choseeProduct = Integer.parseInt(sc.nextLine());
-                            switch (choseeProduct) {
+                            int chonLoaiBenhAn = Integer.parseInt(sc.nextLine());
+                            switch (chonLoaiBenhAn) {
                                 case 1:
-                                    sanPhamService.themMoi(1);
+                                    benhAnService.add(1);
                                     break;
                                 case 2:
-                                    sanPhamService.themMoi(2);
+                                    benhAnService.add(2);
                                     break;
                                 case 3:
                                     break chonChucNang;
@@ -48,17 +51,18 @@ public class MenuQuanLyBenhVien {
                     case 2:
                         while (true) {
                             try {
-                                sanPhamService.xoa();
+                                benhAnService.delete();
                                 break;
-                            } catch (NotFoundProductException e) {
+                            } catch (NotFoundMedicalRecordException e) {
                                 System.out.println("Không tìm thấy! Hãy nhập lại!");
                             }
                         }
                         break;
                     case 3:
+                        benhAnService.display();
                         break;
                     case 4:
-                        break QLBV;
+                        break QLBA;
                     default:
                         System.out.println("Nhập sai!!! Hãy nhập lại!");
                 }
