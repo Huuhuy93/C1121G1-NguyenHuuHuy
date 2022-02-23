@@ -1,9 +1,5 @@
-create database `student-manager`;
-use `student-manager`;
-drop database `student-manager`;
-
-create database studentmanager;
-use studentmanager;
+create database student_manager;
+use student_manager;
 create table Student(
 	id int not null,
     name varchar (45) null,
