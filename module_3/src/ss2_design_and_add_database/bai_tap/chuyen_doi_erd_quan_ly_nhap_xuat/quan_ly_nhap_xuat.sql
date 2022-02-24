@@ -5,8 +5,15 @@ create table nha_cung_cap(
 	ma_NCC varchar(20) not null,
     ten_NCC varchar(30) not null,
     dia_chi varchar(60),
-    so_DT varchar(20),
     primary key(ma_NCC)
+);
+
+create table so_dien_thoai(
+	ma_SDT int not null auto_increment,
+    so_DT varchar(20),
+    ma_NCC varchar(20) not null,
+    primary key(ma_SDT),
+    foreign key(ma_NCC) references nha_cung_cap(ma_NCC)
 );
 
 create table don_dat_hang(
@@ -14,6 +21,13 @@ create table don_dat_hang(
     ngay_DH date not null,
     ma_NCC varchar(20) not null,
     primary key(so_DH),
+    foreign key(ma_NCC) references nha_cung_cap(ma_NCC)
+);
+
+create table cung_cap(
+	so_DH int not null,
+    ma_NCC varchar(20) not null,
+    foreign key(so_DH) references don_dat_hang(so_DH),
     foreign key(ma_NCC) references nha_cung_cap(ma_NCC)
 );
 
@@ -64,6 +78,7 @@ create table chi_tiet_PX(
     foreign key(so_PX) references phieu_xuat(so_PX),
     foreign key(ma_VTu) references vat_tu(ma_VTu)
 );
+
 
 
 
