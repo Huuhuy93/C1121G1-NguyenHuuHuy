@@ -37,6 +37,12 @@ from `order`
 inner join order_detail on `order`.order_id = order_detail.order_id
 inner join product on order_detail.product_id = product.product_id;
 
+select `order`.order_id, `order`.order_date, sum(order_detail.order_QTY * product.product_price)
+from `order`
+inner join order_detail on `order`.order_id = order_detail.order_id
+inner join product on order_detail.product_id = product.product_id
+group by order_id;
+
 
  
  
