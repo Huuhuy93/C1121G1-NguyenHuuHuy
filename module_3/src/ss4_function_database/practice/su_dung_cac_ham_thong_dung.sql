@@ -20,5 +20,9 @@ join mark m on s.student_id = m.student_id
 group by student_id, student_name
 having avg(mark) >= all (select avg(mark) from mark group by mark.student_id);
 
+select class.*, count(student.student_id) as so_luong from student
+right join class on student.class_id = class.class_id
+group by class.class_id having so_luong = 0;
+
 
 
