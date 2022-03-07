@@ -27,7 +27,7 @@ body{
 }
 
 .nav{
-    background-color: #cdbcbc;
+    background-color: #d5c9c9;
     height: 40px;
 }
 .nav ul{
@@ -43,4 +43,22 @@ body{
     text-align: center;
     text-decoration: none;
     color: dimgray;
+}
+.article{
+    background-color: rgba(0, 0, 0, 0.61);
+}
+.left{
+    float: left;
+    padding: 50px;
+    width: 60%
+}
+.left p{
+    line-height: 1.5;
+    font-size: 15px;
+}
+.right{
+    float: left;
+    width: 30%;
+    padding: 50px;
+
 }
