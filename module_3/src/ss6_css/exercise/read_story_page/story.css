@@ -20,19 +20,20 @@
     right: 0;
     height: 500px;
     width: 150px;
+    padding: 10px;
 }
 body{
     background-image: url("https://haycafe.vn/wp-content/uploads/2022/01/Hinh-anh-hinh-nen-Dragon-Ball-800x450.jpg");
     z-index: -1;
     background-size: 100%;
 }
-.muc_luc h3{
+.muc_luc h3 a{
     color: black;
     text-align: left;
     margin-left: 18px;
     font-style: inherit;
 }
-.muc_luc h2{
+.muc_luc h2 {
     color: brown;
     text-align: left;
     margin-left: 18px;
