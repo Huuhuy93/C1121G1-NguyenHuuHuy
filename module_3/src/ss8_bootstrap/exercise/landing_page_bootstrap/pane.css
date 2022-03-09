@@ -9,3 +9,15 @@ a.badge.badge-primary{
     font-size: large;
     font-weight: lighter;
 }
+div.content p.content1{
+    font-family: "Segoe UI",SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-align: center;
+    font-size: 30px;
+    padding-top: 40px;
+    margin: 2px;
+}
+div.content p.content2{
+    font-family: "Segoe UI",SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-align: center;
+    font-size: 23px;
+}
