@@ -32,8 +32,8 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public boolean updateuser(User user) throws SQLException {
-        return iUserRepository.updateuser(user);
+    public boolean updateUser(User user) throws SQLException {
+        return iUserRepository.updateUser(user);
     }
 
     @Override

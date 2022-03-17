@@ -2,10 +2,7 @@ package repository;
 
 import model.User;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -118,7 +115,7 @@ public class UserRepository implements IUserRepository {
     }
 
     @Override
-    public boolean updateuser(User user) throws SQLException {
+    public boolean updateUser(User user) throws SQLException {
         boolean rowUpdate = false;
         Connection connection = null;
 
@@ -129,6 +126,9 @@ public class UserRepository implements IUserRepository {
             preparedStatement.setString(2, user.getEmail());
             preparedStatement.setString(3, user.getCountry());
             preparedStatement.setInt(4, user.getId());
+
+
+            rowUpdate = preparedStatement.executeUpdate() > 0;
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -184,8 +184,68 @@ public class UserRepository implements IUserRepository {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return null;
+        return users;
     }
+
+//    @Override
+//    public User getUserById(Integer id) {
+//        User user = null;
+//        String query = "{CALL get_user_by_id(?)}";
+//
+//        Connection connection = null;
+//        try {
+//            connection = baseRepository.getConnection();
+//
+//             // Step 2:Create a statement using connection object
+//
+//             CallableStatement callableStatement = connection.prepareCall(query);
+//
+//            callableStatement.setInt(1, id);
+//
+//            // Step 3: Execute the query or update query
+//
+//            ResultSet rs = callableStatement.executeQuery();
+//
+//            // Step 4: Process the ResultSet object.
+//
+//            while (rs.next()) {
+//
+//                String name = rs.getString("name");
+//
+//                String email = rs.getString("email");
+//
+//                String country = rs.getString("country");
+//
+//                user = new User(id, name, email, country);
+//
+//            }
+//        } catch (SQLException e) {
+//
+//            printSQLException(e);
+//        }
+//
+//        return user;
+//    }
+
+//    @Override
+//    public void insertUserStore(User user) throws SQLException {
+//        String query = "{CALL insert_user(?,?,?)}";
+//        Connection connection = null;
+//        try {
+//            connection = baseRepository.getConnection();
+//            CallableStatement callableStatement = connection.prepareCall(query);
+//            callableStatement.setString(1, user.getName());
+//
+//            callableStatement.setString(2, user.getEmail());
+//
+//            callableStatement.setString(3, user.getCountry());
+//
+//            System.out.println(callableStatement);
+//            callableStatement.executeUpdate();
+//        } catch (SQLException e) {
+//            printSQLException(e);
+//        }
+//    }
 
 
     private void printSQLException(SQLException ex) {

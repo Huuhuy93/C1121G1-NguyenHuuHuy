@@ -14,9 +14,13 @@ public interface IUserService {
 
     public boolean deleteUser(Integer id) throws SQLException;
 
-    public boolean updateuser(User user) throws SQLException;
+    public boolean updateUser(User user) throws SQLException;
 
     public List<User> searchByCountry(String country);
 
     public List<User> sortByName();
+
+//    User getUserById(Integer id);
+//
+//    void insertUserStore(User user) throws SQLException;
 }

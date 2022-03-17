@@ -19,6 +19,9 @@ public class UserServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+
         String action = request.getParameter("action");
         if (action == null) {
             action = "";
@@ -31,9 +34,6 @@ public class UserServlet extends HttpServlet {
                     break;
                 case "edit":
                     showEditForm(request, response);
-                    break;
-                case "delete":
-                    deleteUser(request, response);
                     break;
                 case "sort":
                     sortByName(request, response);
@@ -49,6 +49,7 @@ public class UserServlet extends HttpServlet {
 
     private List<User> sortByName(HttpServletRequest request, HttpServletResponse response) {
         List<User> userList = new ArrayList<>();
+        userList = iUserService.sortByName();
         request.setAttribute("userList", userList);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("user/list.jsp");
         try {
@@ -127,6 +128,8 @@ public class UserServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+
         String action = request.getParameter("action");
         if (action == null) {
             action = "";
@@ -142,6 +145,9 @@ public class UserServlet extends HttpServlet {
                     break;
                 case "search":
                     searchByCountry(request, response);
+                    break;
+                case "delete":
+                    deleteUser(request, response);
                     break;
             }
         } catch (SQLException ex) {
@@ -161,7 +167,6 @@ public class UserServlet extends HttpServlet {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     private void updateUser(HttpServletRequest request, HttpServletResponse response) throws SQLException,
@@ -172,7 +177,7 @@ public class UserServlet extends HttpServlet {
         String country = request.getParameter("country");
 
         User user = new User(id, name, email, country);
-        iUserService.updateuser(user);
+        iUserService.updateUser(user);
 
         request.setAttribute("user", user);
         request.setAttribute("message", "User information was updated!!!");
