@@ -151,14 +151,31 @@
                     />
                 </td>
             </tr>
+<%--            <tr>--%>
+<%--                <th>Customer Gender:</th>--%>
+<%--                <td>--%>
+<%--                    <input type="text" name="gender" size="45"--%>
+<%--                           value="<c:out value='${customer.customerGender}' />"--%>
+<%--                    />--%>
+<%--                </td>--%>
+<%--            </tr>--%>
+
             <tr>
                 <th>Customer Gender:</th>
                 <td>
-                    <input type="text" name="gender" size="45"
-                           value="<c:out value='${customer.customerGender}' />"
-                    />
+                    <select name="gender" >
+                        <c:if test="${customer.getCustomerGender() == 0 }">
+                            <option selected value="0">FeMale</option>
+                            <option value="1">Male</option>
+                        </c:if>
+                        <c:if test="${customer.getCustomerGender() == 1 }">
+                            <option value="0" >FeMale</option>
+                            <option selected value="1">Male</option>
+                        </c:if>
+                    </select>
                 </td>
             </tr>
+
             <tr>
                 <th>Customer Id Card:</th>
                 <td>

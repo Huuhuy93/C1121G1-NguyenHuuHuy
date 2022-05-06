@@ -2,6 +2,7 @@ package controller;
 
 import model.Customer;
 import model.CustomerDTO;
+import model.CustomerType;
 import service.ICustomerService;
 import service.impl.CustomerService;
 
@@ -35,6 +36,9 @@ public class CustomerServlet extends HttpServlet {
                 case "editCustomer":
                     showEditCustomerForm(request, response);
                     break;
+//                case "sortByName":
+//                    sortByName(request, response);
+//                    break;
                 default:
                     listCustomerDTO(request, response);
                     break;
@@ -66,9 +70,45 @@ public class CustomerServlet extends HttpServlet {
                 case "deleteCustomer":
                     deleteCustomer(request, response);
                     break;
+                case "searchCustomer":
+                    searchByName(request, response);
+                    break;
             }
         } catch (SQLException ex) {
             throw new ServletException(ex);
+        }
+    }
+
+//    private List<CustomerDTO> sortByName(HttpServletRequest request, HttpServletResponse response) throws SQLException,
+//            ServletException, IOException {
+//        List<CustomerDTO> customerDTOList = new ArrayList<>();
+//        customerDTOList = iCustomerService.sortByName();
+//        request.setAttribute("customerDTOList", customerDTOList);
+//        RequestDispatcher requestDispatcher = request.getRequestDispatcher("customer/list_customer.jsp");
+//        try {
+//            requestDispatcher.forward(request,response);
+//        } catch (ServletException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        return customerDTOList;
+//    }
+
+
+    private void searchByName(HttpServletRequest request, HttpServletResponse response) throws SQLException,
+            ServletException, IOException {
+        String searchName = request.getParameter("nameForSearch");
+        List<CustomerDTO> customerDTOList = iCustomerService.searchByName(searchName);
+        request.setAttribute("customerDTOList", customerDTOList);
+//        có 2 cách: cách1 search trực tiếp trong trag list/ cách 2 : tạo 1 trang jsp riêng
+        RequestDispatcher dispatcher = request.getRequestDispatcher("customer/list_customer.jsp");
+        try {
+            dispatcher.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -184,6 +224,8 @@ public class CustomerServlet extends HttpServlet {
 
     private void showNewCustomerForm(HttpServletRequest request, HttpServletResponse response) throws SQLException,
             ServletException, IOException {
+        List<CustomerType> customerTypeList = iCustomerService.getAllCustomertype();
+        request.setAttribute("customerTypeList",customerTypeList);
         RequestDispatcher dispatcher = request.getRequestDispatcher("customer/create_customer.jsp");
         try {
             dispatcher.forward(request, response);

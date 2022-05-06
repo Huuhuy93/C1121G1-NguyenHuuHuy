@@ -2,6 +2,7 @@ package service.impl;
 
 import model.Customer;
 import model.CustomerDTO;
+import model.CustomerType;
 import repository.ICustomerRepository;
 import repository.impl.CustomerRepository;
 import service.ICustomerService;
@@ -39,5 +40,20 @@ public class CustomerService implements ICustomerService {
     @Override
     public List<CustomerDTO> selectALLCustomerWithDTO() {
         return iCustomerRepository.selectALLCustomerWithDTO();
+    }
+
+    @Override
+    public List<CustomerType> getAllCustomertype() {
+        return iCustomerRepository.getAllCustomertype();
+    }
+
+    @Override
+    public List<CustomerDTO> searchByName(String name) {
+        return iCustomerRepository.searchByName(name);
+    }
+
+    @Override
+    public List<CustomerDTO> sortByName() {
+        return iCustomerRepository.sortByName();
     }
 }

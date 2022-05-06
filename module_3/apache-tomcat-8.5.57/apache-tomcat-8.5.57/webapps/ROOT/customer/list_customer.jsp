@@ -16,12 +16,17 @@
     <title>Customer</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
           integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+<%--    remix icon--%>
     <link
             href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
             rel="stylesheet"/>
+<%--    font anysome : cac icon--%>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
           integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+<%--    phan trang datatable--%>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css">
 
 </head>
 <body>
@@ -106,10 +111,10 @@
             </li>
 
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+<%--        <form class="form-inline my-2 my-lg-0">--%>
+<%--            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">--%>
+<%--            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>--%>
+<%--        </form>--%>
     </div>
 </nav>
 
@@ -117,14 +122,14 @@
 <div class="card-body">
     <h2 style="text-align: center">Customer Management</h2>
     <h3 style="text-align: center">
-        <a href="/customer?action=createCustomer">Add New Customer</a>
-        <a href="#">Get List All</a>
+        <a href="/customer?action=createCustomer" style="font-size: 20px">Add New Customer ||</a>
+        <a href="customer?action=customer" style="font-size: 20px">Get List All</a>
     </h3>
-    <h3 style="text-align: center">
-        <a href="#">Sort by name</a>
-    </h3>
-    <form method="post" action="#">
-        <input type="text" name="countryForSearch" placeholder="Search By Country">
+<%--    <h3 style="text-align: center">--%>
+<%--        <a href="/customer?action=sortByName" style="font-size: 20px">Sort by name</a>--%>
+<%--    </h3>--%>
+    <form method="post" action="/customer?action=searchCustomer">
+        <input type="text" name="nameForSearch" placeholder="Search By Name">
         <input type="hidden" name="action" hidden value="search">
         <button type="submit">Search</button>
     </form>
@@ -223,13 +228,41 @@
 </footer>
 
 </body>
+<%--<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>--%>
+<%--<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>--%>
+<%--<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"--%>
+<%--        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"--%>
+<%--        crossorigin="anonymous"></script>--%>
+<%--<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"--%>
+<%--        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"--%>
+<%--        crossorigin="anonymous"></script>--%>
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+
+<%--<script src="https://code.jquery.com/jquery-3.5.1.js"></script>--%>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+
+
+<script>
+    $.extend(true, $.fn.dataTable.defaults, {
+        "searching": false,
+        "ordering": false
+    });
+    $(document).ready(function () {
+        $('#example').DataTable({
+            "lengthMenu": [[5, 10, 15, -1], [5, 10, 15, "All"]]
+        });
+    });
+</script>
 
 <script>
     function setIdDelete(customerId) {
@@ -237,4 +270,6 @@
     }
 
 </script>
+
+
 </html>

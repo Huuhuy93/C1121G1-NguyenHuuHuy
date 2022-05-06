@@ -111,14 +111,10 @@
 </nav>
 
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-2" style="height: 500px">
-        </div>
-        <div class="col-10" style="height: 500px; padding: 0" >
-            <img style="height: 400px" width="100%"
+        <div style="height: 300px; padding: 0" >
+            <img style="height: 300px" width="100%"
                  src="https://file4.batdongsan.com.vn/2021/06/17/JGcIp0rf/20210617172417-2f9e.jpg" class="img-fluid">
         </div>
-    </div>
 </div>
 <footer class="bg-dark py-3">
     <div class="container text-white text-center">

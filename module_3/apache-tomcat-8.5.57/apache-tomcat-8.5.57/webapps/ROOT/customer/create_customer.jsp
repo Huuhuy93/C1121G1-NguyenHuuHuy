@@ -139,9 +139,9 @@
             <tr>
                 <th>Customer Gender:</th>
                 <td>
-                    <select name="gender" >
-                            <option selected value="0">Female</option>
-                            <option value="1">Male</option>
+                    <select name="gender">
+                        <option selected value="0">Female</option>
+                        <option value="1">Male</option>
                     </select>
                 </td>
             </tr>
@@ -169,18 +169,33 @@
                     <input type="text" name="address" id="address" size="15"/>
                 </td>
             </tr>
+
+<%--            Cach 1 : cho danh sach truc tiep--%>
+<%--            Cach 2 : duyen vong lap--%>
+<%--            <tr>--%>
+<%--                <th>Customer Type:</th>--%>
+<%--                <td>--%>
+<%--                    <select name="type_id">--%>
+<%--                        <option selected value="1">Diamond</option>--%>
+<%--                        <option value="2">Platinum</option>--%>
+<%--                        <option value="3">Gold</option>--%>
+<%--                        <option value="4">Silver</option>--%>
+<%--                        <option value="5">Member</option>--%>
+<%--                    </select>--%>
+<%--                </td>--%>
+<%--            </tr>--%>
+
             <tr>
-                <th>Customer Type:</th>
+                <th>Customer Type</th>
                 <td>
-                    <select name="type_id" >
-                        <option selected value="1">Diamond</option>
-                        <option value="2">Platinum</option>
-                        <option value="3">Gold</option>
-                        <option value="4">Silver</option>
-                        <option value="5">Member</option>
+                    <select name="type_id">
+                        <c:forEach var="customerType" items="${customerTypeList}">
+                            <option value="${customerType.getCustomerTypeId()}">${customerType.getCustomerTypeName()}</option>
+                        </c:forEach>
                     </select>
                 </td>
             </tr>
+
             <tr>
                 <td colspan="2" align="center">
                     <input type="submit" value="Save"/>

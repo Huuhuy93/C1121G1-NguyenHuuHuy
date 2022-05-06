@@ -22,4 +22,8 @@ public interface ICustomerRepository {
 
     public List<CustomerType> getAllCustomertype();
 
+    public List<CustomerDTO> searchByName(String name);
+
+    public List<CustomerDTO> sortByName();
+
 }

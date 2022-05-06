@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div align="center">
+    <table border="1" id="example" class="table table-striped table-bordered">
+        <thead>
+
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Country</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach var="user" items="${userList}">
+            <tr>
+                <td><c:out value="${user.id}"/></td>
+                <td><c:out value="${user.name}"/></td>
+                <td><c:out value="${user.email}"/></td>
+                <td><c:out value="${user.country}"/></td>
+                <td>
+                    <a class="btn btn-primary" href="/users?action=edit&id=${user.id}">Edit</a>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" onclick="getId(${user.id})"
+                            data-bs-target="#exampleModal">
+                        delete
+                    </button>
+
+
+
+                </td>
+            </tr>
+        </c:forEach>
+
+
+        <%--        modal--%>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form method="post" action="/users?action=delete" >
+                        <input  name="id" id="idDelete">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">bạn có muốn xóa sản phẩm ? </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Yes or No
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">ok</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

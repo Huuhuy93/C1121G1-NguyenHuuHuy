@@ -33,6 +33,14 @@ public class CustomerRepository implements ICustomerRepository {
             " customer_gender =?, customer_id_card =?, customer_phone =?, customer_email =?, customer_address =?, " +
             " customer_type_id=?   where customer_id = ?;";
 
+    private static final String SELECT_NAME_SQL = "select customer.customer_id, customer.customer_name, customer.customer_birthday, customer.customer_gender, customer.customer_id_card, customer.customer_phone, customer.customer_email, customer.customer_address, customer_type.customer_type_name\n" +
+            "            from customer join customer_type on customer.customer_type_id = customer_type.customer_type_id\n" +
+            "            where customer_name like concat(\"%\",?,\"%\");";
+
+    private static final String SORT_BY_NAME_SQL = "select customer.customer_id, customer.customer_name, customer.customer_birthday, customer.customer_gender, customer.customer_id_card, customer.customer_phone, customer.customer_email, customer.customer_address, customer_type.customer_type_name\n" +
+            "            from customer join customer_type on customer.customer_type_id = customer_type.customer_type_id\n" +
+            "            order by customer_name;";
+
     private BaseFuramaRepository baseFuramaRepository = new BaseFuramaRepository();
 
 
@@ -173,12 +181,72 @@ public class CustomerRepository implements ICustomerRepository {
             while (resultSet.next()) {
                 Integer customerTypeId = resultSet.getInt("customer_type_id");
                 String customerTypeName = resultSet.getString("customer_type_name");
+                CustomerType customerType = new CustomerType(customerTypeId, customerTypeName);
+                customerTypeList.add(customerType);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
         return customerTypeList;
+    }
+
+    @Override
+    public List<CustomerDTO> searchByName(String name) {
+        List<CustomerDTO> customerDTOList = new ArrayList<>();
+        Connection connection = null;
+        try {
+            connection = baseFuramaRepository.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_NAME_SQL);
+            preparedStatement.setString(1, "%" + name + "%");
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                Integer customerId = rs.getInt("customer_id");
+                String customerName = rs.getString("customer_name");
+                String customerBirthday = rs.getString("customer_birthday");
+                Integer customerGender = rs.getInt("customer_gender");
+                String customerIdCard = rs.getString("customer_id_card");
+                String customerPhone = rs.getString("customer_phone");
+                String customerEmail = rs.getString("customer_email");
+                String customerAddress = rs.getString("customer_address");
+                String customerTypeName = rs.getString("customer_type_name");
+                customerDTOList.add(new CustomerDTO(customerId, customerName, customerBirthday, customerGender, customerIdCard,
+                        customerPhone, customerEmail, customerAddress, customerTypeName));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return customerDTOList;
+    }
+
+    @Override
+    public List<CustomerDTO> sortByName() {
+        List<CustomerDTO> customerDTOList = new ArrayList<>();
+        Connection connection = null;
+        try {
+            connection = baseFuramaRepository.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(SORT_BY_NAME_SQL);
+            ResultSet rs = preparedStatement.executeQuery();
+
+            while (rs.next()) {
+                Integer customerId = rs.getInt("customer_id");
+                String customerName = rs.getString("customer_name");
+                String customerBirthday = rs.getString("customer_birthday");
+                Integer customerGender = rs.getInt("customer_gender");
+                String customerIdCard = rs.getString("customer_id_card");
+                String customerPhone = rs.getString("customer_phone");
+                String customerEmail = rs.getString("customer_email");
+                String customerAddress = rs.getString("customer_address");
+                String customerTypeName = rs.getString("customer_type_name");
+                customerDTOList.add(new CustomerDTO(customerId, customerName, customerBirthday, customerGender, customerIdCard,
+                        customerPhone, customerEmail, customerAddress, customerTypeName));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return customerDTOList;
     }
 
     @Override

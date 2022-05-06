@@ -2,6 +2,7 @@ package service;
 
 import model.Customer;
 import model.CustomerDTO;
+import model.CustomerType;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -18,5 +19,13 @@ public interface ICustomerService {
     public boolean updateCustomer(Customer customer) throws SQLException;
 
     public List<CustomerDTO> selectALLCustomerWithDTO();
+
+    public List<CustomerType> getAllCustomertype();
+
+    public List<CustomerDTO> searchByName(String name);
+
+    public List<CustomerDTO> sortByName();
+
+
 
 }
